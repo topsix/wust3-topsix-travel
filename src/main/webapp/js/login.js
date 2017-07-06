@@ -58,7 +58,29 @@ var reMethod = "GET",
 	pwdmin = 6;
 
 $(document).ready(function() {
+	
 
+	$('#log').click(function() {
+
+		if ($('#u').val() == "") {
+			$('#u').focus().css({
+				border: "1px solid red",
+				boxShadow: "0 0 2px red"
+			});
+			$('#userCue').html("<font color='red'><b>×账号不能为空</b></font>");
+			return false;
+		}
+		
+		if ($('#p').val() == "") {
+			$('#p').focus().css({
+				border: "1px solid red",
+				boxShadow: "0 0 2px red"
+			});
+			$('#userCue').html("<font color='red'><b>×密码不能为空</b></font>");
+			return false;
+		}
+		
+	});
 
 	$('#reg').click(function() {
 
@@ -83,7 +105,7 @@ $(document).ready(function() {
 			return false;
 
 		}
-		$.ajax({
+		/*$.ajax({
 			type: reMethod,
 			url: "/member/ajaxyz.php",
 			data: "uid=" + $("#user").val() + '&temp=' + new Date(),
@@ -104,16 +126,31 @@ $(document).ready(function() {
 				}
 
 			}
-		});
+		});*/
 
 
-		if ($('#passwd').val().length < pwdmin) {
-			$('#passwd').focus();
-			$('#userCue').html("<font color='red'><b>×密码不能小于" + pwdmin + "位</b></font>");
+		if ($('#password').val() == "") {
+			$('#password').focus().css({
+				border: "1px solid red",
+				boxShadow: "0 0 2px red"
+			});
+			$('#userCue').html("<font color='red'><b>×密码不能为空</b></font>");
 			return false;
 		}
-		if ($('#passwd2').val() != $('#passwd').val()) {
-			$('#passwd2').focus();
+
+		if ($('#password').val().length < 6) {
+			$('#password').focus().css({
+				border: "1px solid red",
+				boxShadow: "0 0 2px red"
+			});
+			$('#userCue').html("<font color='red'><b>×密码不能小于6位</b></font>");
+			return false;
+		}
+		if ($('#password2').val() != $('#password').val()) {
+			$('#password2').focus().css({
+				border: "1px solid red",
+				boxShadow: "0 0 2px red"
+			});
 			$('#userCue').html("<font color='red'><b>×两次密码不一致！</b></font>");
 			return false;
 		}
@@ -124,7 +161,7 @@ $(document).ready(function() {
 				border: "1px solid red",
 				boxShadow: "0 0 2px red"
 			});
-			$('#userCue').html("<font color='red'><b>×QQ号码格式不正确</b></font>");return false;
+			$('#userCue').html("<font color='red'><b>×手机号格式不正确</b></font>");return false;
 		} else {
 			$('#qq').css({
 				border: "1px solid #D7D7D7",
