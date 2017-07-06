@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -26,20 +26,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
  <body>
-<h1 >´óºÃºÓÉ½</h1>
+<h1 >å¤§å¥½æ²³å±±</h1>
 
 <div class="login" style="margin-top:50px;">
     
     <div class="header">
-        <div class="switch" id="switch"><a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);" tabindex="7">¿ìËÙµÇÂ¼</a>
-			<a class="switch_btn" id="switch_login" href="#" tabindex="8">¿ìËÙ×¢²á</a><div class="switch_bottom" id="switch_bottom" style="position: absolute; width: 64px; left: 0px;"></div>
+        <div class="switch" id="switch"><a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);" tabindex="7">å¿«é€Ÿç™»å½•</a>
+			<a class="switch_btn" id="switch_login" href="#" tabindex="8">å¿«é€Ÿæ³¨å†Œ</a><div class="switch_bottom" id="switch_bottom" style="position: absolute; width: 64px; left: 0px;"></div>
         </div>
     </div>    
   
     
     <div class="web_qr_login" id="web_qr_login" style="display: block; height: 235px;">    
 
-            <!--µÇÂ¼-->
+            <!--ç™»å½•-->
             <div class="web_login" id="web_login">
                
                
@@ -50,41 +50,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<form action="http://www.js-css.cn" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post"><input type="hidden" name="did" value="0"/>
                <input type="hidden" name="to" value="log"/>
                 <div class="uinArea" id="uinArea">
-                <label class="input-tips" for="u">ÕÊºÅ£º</label>
+                <label class="input-tips" for="u">å¸å·ï¼š</label>
                 <div class="inputOuter" id="uArea">
                     
                     <input type="text" id="u" name="username" class="inputstyle"/>
                 </div>
                 </div>
                 <div class="pwdArea" id="pwdArea">
-               <label class="input-tips" for="p">ÃÜÂë£º</label> 
+               <label class="input-tips" for="p">å¯†ç ï¼š</label> 
                <div class="inputOuter" id="pArea">
                     
                     <input type="password" id="p" name="p" class="inputstyle"/>
                 </div>
                 </div>
                
-                <div style="padding-left:50px;margin-top:20px;"><input type="submit" value="µÇ Â¼" style="width:150px;" class="button_blue"/></div>
+                <div style="padding-left:50px;margin-top:20px;"><input type="submit" value="ç™» å½•" style="width:150px;" class="button_blue"/></div>
               </form>
            </div>
            
             	</div>
                
             </div>
-            <!--µÇÂ¼end-->
+            <!--ç™»å½•end-->
   </div>
 
-  <!--×¢²á-->
+  <!--æ³¨å†Œ-->
     <div class="qlogin" id="qlogin" style="display: none; ">
    
     <div class="web_login"><form name="form2" id="regUser" accept-charset="utf-8"  action="http://www.js-css.cn" method="post">
 	      <input type="hidden" name="to" value="reg"/>
 		      		       <input type="hidden" name="did" value="0"/>
         <ul class="reg_form" id="reg-ul">
-        		<div id="userCue" class="cue">¿ìËÙ×¢²áÇë×¢Òâ¸ñÊ½</div>
+        		<div id="userCue" class="cue">å¿«é€Ÿæ³¨å†Œè¯·æ³¨æ„æ ¼å¼</div>
                 <li>
                 	
-                    <label for="user"  class="input-tips2">ÓÃ»§Ãû£º</label>
+                    <label for="user"  class="input-tips2">ç”¨æˆ·åï¼š</label>
                     <div class="inputOuter2">
                         <input type="text" id="user" name="user" maxlength="16" class="inputstyle2"/>
                     </div>
@@ -92,14 +92,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </li>
                 
                 <li>
-                <label for="passwd" class="input-tips2">ÃÜÂë£º</label>
+                <label for="passwd" class="input-tips2">å¯†ç ï¼š</label>
                     <div class="inputOuter2">
                         <input type="password" id="passwd"  name="passwd" maxlength="16" class="inputstyle2"/>
                     </div>
                     
                 </li>
                 <li>
-                <label for="passwd2" class="input-tips2">È·ÈÏÃÜÂë£º</label>
+                <label for="passwd2" class="input-tips2">ç¡®è®¤å¯†ç ï¼š</label>
                     <div class="inputOuter2">
                         <input type="password" id="passwd2" name="" maxlength="16" class="inputstyle2" />
                     </div>
@@ -107,17 +107,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </li>
                 
                 <li>
-                 <label for="phone" class="input-tips2">µç»°£º</label>
+                 <label for="phone" class="input-tips2">æ‰‹æœºï¼š</label>
                     <div class="inputOuter2">
                        
-                        <input type="text" id="phone" name="phone" maxlength="10" class="inputstyle2"/>
+                        <input type="text" id="phone" name="phone" maxlength="11" class="inputstyle2"/>
                     </div>
                    
                 </li>
                 
                 <li>
                     <div class="inputArea">
-                        <input type="button" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="È·¶¨²¢×¢²á"/> <a href="#" class="zcxy" target="_blank">Íü¼ÇÃÜÂë</a>
+                        <input type="button" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="ç¡®å®šå¹¶æ³¨å†Œ"/> <a href="#" class="zcxy" target="_blank">å¿˜è®°å¯†ç </a>
                     </div>
                     
                 </li><div class="cl"></div>
@@ -128,7 +128,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    
     
     </div>
-    <!--×¢²áend-->
+    <!--æ³¨å†Œend-->
 </div>
 
 </body>

@@ -16,7 +16,7 @@ $(function(){
 		
 		$('#qlogin').css('display','block');
 		$('#web_qr_login').css('display','none');
-		});
+		});0
 if(getParam("a")=='0')
 {
 	$('#switch_login').trigger('click');
@@ -124,7 +124,7 @@ $(document).ready(function() {
 				border: "1px solid red",
 				boxShadow: "0 0 2px red"
 			});
-			$('#userCue').html("<font color='red'><b>×QQ号码格式不正确</b></font>");return false;
+			$('#userCue').html("<font color='red'><b>×手机格式不正确</b></font>");return false;
 		} else {
 			$('#qq').css({
 				border: "1px solid #D7D7D7",
