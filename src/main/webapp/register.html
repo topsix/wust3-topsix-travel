@@ -4,12 +4,77 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
      <script type="text/javascript" src="js/jquery/jquery-1.9.0.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
+
     <link href="css/login2.css" rel="stylesheet" type="text/css" />
 
 <title>注册</title>
 </head>
 <body>
+
+<script type="text/javascript" >
+function checkname(username){ //失去焦点时执行的函数	
+	if(username.value==""){
+	   var inner=document.getElementById("userCue");
+	   inner.innerHTML="<font color='red'>用户名为空</font>";
+	  }
+	else if(username.value.length<4 || username.value.length>16){
+		 var inner=document.getElementById("userCue");
+		   inner.innerHTML="<font color='red'>用户名必须为4~16位</font>";	
+	}
+	  else{
+	     var inner=document.getElementById("userCue");
+	      inner.innerHTML="";
+	  }
+}
+      function checkpassword(password){  //失去焦点时执行的函数
+	  if(password.value==""){
+	   var inner=document.getElementById("userCue");
+	   inner.innerHTML="<font color='red'>密码为空</font>";
+	  }
+	  else if(password.value.length<6){
+			 var inner=document.getElementById("userCue");
+			   inner.innerHTML="<font color='red'>密码不能低于6位</font>";	
+		}
+	  else{
+	     var inner=document.getElementById("userCue");
+	      inner.innerHTML="";
+	  }
+	  
+      }
+	  
+		  function checkpassword2(password2){  //失去焦点时执行的函数
+			  var password=document.getElementById("password");
+			  if(password2.value != password.value){
+			   var inner=document.getElementById("userCue");
+			   inner.innerHTML="<font color='red'>密码不一致</font>";
+			  }
+			  else{
+			     var inner=document.getElementById("userCue");
+			      inner.innerHTML="";
+			  }
+		  }
+		  
+			  function checkphone(phone){  //失去焦点时执行的函数
+				  if(phone.value==""){
+				   var inner=document.getElementById("userCue");
+				   inner.innerHTML="<font color='red'>手机号为空</font>";
+				  }
+				  else if(phone.value.length!=11){
+					  var inner=document.getElementById("userCue");
+					   inner.innerHTML="<font color='red'>手机号格式不正确</font>";
+				  }
+				  
+				  else{
+				     var inner=document.getElementById("userCue");
+				      inner.innerHTML="";
+				  }
+				  }
+
+
+
+</script>
+
+
 <h1 style="color:white;">大好河山</h1>
 <div class="login" style="margin-top:50px;">   
     <div class="header">
@@ -25,7 +90,7 @@
   <!--注册-->
     <div class="qlogin" id="qlogin" style="display:  block; height: 350px; ">
    
-    <div class="web_login"><form name="form2" id="regUser" accept-charset="utf-8"  action="servlet/RegServlet" method="post">
+    <div class="web_login"><form name="form2" id="regUser" accept-charset="utf-8"   method="post">
 	      <input type="hidden" name="to" value="reg"/>
 		      		       <input type="hidden" name="did" value="0"/>
         <ul class="reg_form" id="reg-ul">
@@ -34,7 +99,7 @@
                 	
                     <label for="user"  class="input-tips2">用户名：</label>
                     <div class="inputOuter2">
-                        <input type="text" id="user" name="username" maxlength="16" class="inputstyle2"/>
+                        <input type="text" id="user" name="username" maxlength="16" class="inputstyle2" onblur="checkname(this)"/>
                     </div>
                     
                 </li>
@@ -42,14 +107,14 @@
                 <li>
                 <label for="passwd" class="input-tips2">密码：</label>
                     <div class="inputOuter2">
-                        <input type="password" id="password"  name="passwd" maxlength="16" class="inputstyle2"/>
+                        <input type="password" id="password"  name="passwd" maxlength="16" class="inputstyle2" onblur="checkpassword(this)"/>
                     </div>
                     
                 </li>
                 <li>
                 <label for="passwd2" class="input-tips2">确认密码：</label>
                     <div class="inputOuter2">
-                        <input type="password" id="password2" name="" maxlength="16" class="inputstyle2" />
+                        <input type="password" id="password2" name="passwd" maxlength="16" class="inputstyle2"  onblur="checkpassword2(this)"/>
                     </div>
                     
                 </li>
@@ -58,7 +123,7 @@
                  <label for="phone" class="input-tips2">手机：</label>
                     <div class="inputOuter2">
                        
-                        <input type="text" id="phone" name="phone" maxlength="11" class="inputstyle2"/>
+                        <input type="text" id="phone" name="phone" maxlength="11" class="inputstyle2" onblur="checkphone(this)"/>
                     </div>
                    
                 </li>
