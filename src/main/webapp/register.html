@@ -3,15 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-     <script type="text/javascript" src="js/jquery/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="js/jquery/jquery-1.9.0.min.js"></script>
 
-    <link href="css/login2.css" rel="stylesheet" type="text/css" />
+<link href="css/login2.css" rel="stylesheet" type="text/css" />
 
 <title>注册</title>
 </head>
 <body>
 
-<script type="text/javascript" >
+<script type="text/javascript">
+function register()
+    {
+    
+         var user=document.getElementById("user").value;
+		  var pwd=document.getElementById("password").value;  
+		  var str=$('#regUser').serialize();
+		  //alert(str);   
+			$.ajax({  
+	            type: "POST",  
+	            url: "http://localhost:8080/wust3-travel/servlet/Regservlet",  
+	            dataType:"json",
+	            data: $('#regUser').serialize(),  
+	           
+                success: function(data){    
+                	
+	            	//var obj = JSON.parse(data); //由JSON字符串转换为JSON对象
+	            	
+	                   if(data.status=="0")
+	                	   window.location.href="login.html";
+                 else
+                	 document.getElementById("userCue").innerHTML="<font color='red'>登录失败！</font>";
+	                	 
+	            }  
+	        })  ;    
+    
+   }
+
 function checkname(username){ //失去焦点时执行的函数	
 	if(username.value==""){
 	   var inner=document.getElementById("userCue");
@@ -26,7 +53,8 @@ function checkname(username){ //失去焦点时执行的函数
 	      inner.innerHTML="";
 	  }
 }
-      function checkpassword(password){  //失去焦点时执行的函数
+
+function checkpassword(password){  //失去焦点时执行的函数
 	  if(password.value==""){
 	   var inner=document.getElementById("userCue");
 	   inner.innerHTML="<font color='red'>密码为空</font>";
@@ -40,9 +68,9 @@ function checkname(username){ //失去焦点时执行的函数
 	      inner.innerHTML="";
 	  }
 	  
-      }
+ }
 	  
-		  function checkpassword2(password2){  //失去焦点时执行的函数
+ function checkpassword2(password2){  //失去焦点时执行的函数
 			  var password=document.getElementById("password");
 			  if(password2.value != password.value){
 			   var inner=document.getElementById("userCue");
@@ -53,8 +81,7 @@ function checkname(username){ //失去焦点时执行的函数
 			      inner.innerHTML="";
 			  }
 		  }
-		  
-			  function checkphone(phone){  //失去焦点时执行的函数
+ function checkphone(phone){  //失去焦点时执行的函数
 				  if(phone.value==""){
 				   var inner=document.getElementById("userCue");
 				   inner.innerHTML="<font color='red'>手机号为空</font>";
@@ -68,77 +95,78 @@ function checkname(username){ //失去焦点时执行的函数
 				     var inner=document.getElementById("userCue");
 				      inner.innerHTML="";
 				  }
-				  }
+	}
+				  
+ 
+	 
 </script>
 
-<h1 style="color:white;">大好河山</h1>
-<div class="login" style="margin-top:50px;">   
-    <div class="header">
-        <div class="switch" id="switch"><a class="switch_btn" id="switch_qlogin" href="login.html" tabindex="7">快速登录</a>
-			<a class="switch_btn_focus" id="switch_login" href="register.html" tabindex="8">快速注册</a>
-			<div class="switch_bottom" id="switch_bottom" style="position: absolute; width: 64px; left: 155px;"></div>
-        </div>
-    </div>    
-  
-    
-    
+	<h1 style="color:white;">大好河山</h1>
+	<div class="login" style="margin-top:50px;">
+		<div class="header">
+			<div class="switch" id="switch">
+				<a class="switch_btn" id="switch_qlogin" href="login.html"
+					tabindex="7">快速登录</a> <a class="switch_btn_focus" id="switch_login"
+					href="register.html" tabindex="8">快速注册</a>
+				<div class="switch_bottom" id="switch_bottom"
+					style="position: absolute; width: 64px; left: 155px;"></div>
+			</div>
+		</div>
 
-  <!--注册-->
-    <div class="qlogin" id="qlogin" style="display:  block; height: 350px; ">
-   
-    <div class="web_login"><form name="form2" id="regUser" accept-charset="utf-8"   method="post">
-	      <input type="hidden" name="to" value="reg"/>
-		      		       <input type="hidden" name="did" value="0"/>
-        <ul class="reg_form" id="reg-ul">
-        		<div id="userCue" class="cue">快速注册请注意格式</div>
-                <li>
-                	
-                    <label for="user"  class="input-tips2">用户名：</label>
-                    <div class="inputOuter2">
-                        <input type="text" id="user" name="username" maxlength="16" class="inputstyle2" onblur="checkname(this)"/>
-                    </div>
-                    
-                </li>
-                
-                <li>
-                <label for="passwd" class="input-tips2">密码：</label>
-                    <div class="inputOuter2">
-                        <input type="password" id="password"  name="passwd" maxlength="16" class="inputstyle2" onblur="checkpassword(this)"/>
-                    </div>
-                    
-                </li>
-                <li>
-                <label for="passwd2" class="input-tips2">确认密码：</label>
-                    <div class="inputOuter2">
-                        <input type="password" id="password2" name="passwd" maxlength="16" class="inputstyle2"  onblur="checkpassword2(this)"/>
-                    </div>
-                    
-                </li>
-                
-                <li>
-                 <label for="phone" class="input-tips2">手机：</label>
-                    <div class="inputOuter2">
-                       
-                        <input type="text" id="phone" name="phone" maxlength="11" class="inputstyle2" onblur="checkphone(this)"/>
-                    </div>
-                   
-                </li>
-                
-                <li>
-                    <div class="inputArea">
-                        <input type="button" id="reg"  style="margin-top:10px;margin-left:100px;" class="button_blue" value="确定并注册"/>
-                    </div>
-                    
-               <!--  </li><div class="cl"></div> --> 
-            </ul></form>
-           
-    
-    </div>
-   
-    
-    </div>
-    <!--注册end-->
-</div>
+
+
+
+		<!--注册-->
+		<div class="qlogin" id="qlogin"
+			style="display:  block; height: 350px; ">
+
+			<div class="web_login">
+				<form name="form2" id="regUser" accept-charset="utf-8" method="post">
+					<input type="hidden" name="to" value="reg" /> <input type="hidden"
+						name="did" value="0" />
+					<ul class="reg_form" id="reg-ul">
+						<div id="userCue" class="cue">快速注册请注意格式</div>
+						<li><label for="user" class="input-tips2">用户名：</label>
+							<div class="inputOuter2">
+								<input type="text" id="user" name="username" maxlength="16"
+									class="inputstyle2" onblur="checkname(this)" />
+							</div></li>
+
+						<li><label for="passwd" class="input-tips2">密码：</label>
+							<div class="inputOuter2">
+								<input type="password" id="password" name="passwd"
+									maxlength="16" class="inputstyle2" onblur="checkpassword(this)" />
+							</div></li>
+						<li><label for="passwd2" class="input-tips2">确认密码：</label>
+							<div class="inputOuter2">
+								<input type="password" id="password2" name="passwd"
+									maxlength="16" class="inputstyle2"
+									onblur="checkpassword2(this)" />
+							</div></li>
+
+						<li><label for="phone" class="input-tips2">手机：</label>
+							<div class="inputOuter2">
+
+								<input type="text" id="phone" name="phone" maxlength="11"
+									class="inputstyle2" onblur="checkphone(this)" />
+							</div></li>
+
+						<li>
+							<div class="inputArea">
+								<input type="button" id="reg"
+									style="margin-top:10px;margin-left:100px;" class="button_blue"
+									value="确定并注册" onclick="register()" />
+							</div> <!--  </li><div class="cl"></div> -->
+					</ul>
+				</form>
+
+
+			</div>
+
+
+		</div>
+		<!--注册end-->
+	</div>
 
 
 </body>
