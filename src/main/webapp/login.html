@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
- <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+ <script type="text/javascript" src="js/jquery/jquery-1.9.0.min.js"></script>
   
     <link href="css/login2.css" rel="stylesheet" type="text/css" />
     
@@ -33,10 +33,41 @@ function checkpassword(password){  //失去焦点时执行的函数
 	      inner.innerHTML="";
 	  }
 }
-
+ function login()
+ {
+    
+     var user=document.getElementById("u").value;
+	  var pwd=document.getElementById("p").value; 
+    var xmlhttp;
+		if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		  
+		  xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+			  if(xmlhttp.responseText=="success")
+			  window.location.href="index.html?username="+user;
+			  else{
+				  var inner=document.getElementById("userCue");
+			      inner.innerHTML="<font color='green'>用户名密码不匹配</font>";
+			  }
+				  
+			}
+		  }	
+    
+    xmlhttp.open("Get","http://localhost:8080/wust3-travel/servlet/Logservlet?username="+user+"&password="+pwd,true);
+    
+    xmlhttp.send();
+    
+    }
+		
 </script>
-
-
 <h1 style="color:white;">大好河山</h1>
 
 <div class="login" style="margin-top:50px;">
@@ -57,7 +88,7 @@ function checkpassword(password){  //失去焦点时执行的函数
     
             <div id="userCue" class="cue" style="width: 298px;margin-left:40px ">快速登录请注意格式</div>
 			<div class="login_form" style="margin-top:10px">
-				<form  name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post" >
+				<form  name="loginform" accept-charset="utf-8" id="login_form" class="loginForm"  >
 				
                 <div class="uinArea" id="uinArea">
                 <label class="input-tips" for="u">帐号：</label>
@@ -75,7 +106,7 @@ function checkpassword(password){  //失去焦点时执行的函数
                 </div>
                
                 <div style="padding-left:60px;margin-top:15px;">
-                <input type="submit" id="log" value="登 录" style="width:150px;" class="button_blue" onclick="click(this)" /></div>
+                <input type="button" id="log" value="登 录" style="width:150px;" class="button_blue" onclick="login()" /></div>
               </form>
            </div>
            
