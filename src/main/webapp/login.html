@@ -35,35 +35,27 @@ function checkpassword(password){  //失去焦点时执行的函数
 }
  function login()
  {
+//            var str=$('#login_form').serialize();
+// 		           alert(str);   
     
-     var user=document.getElementById("u").value;
-	  var pwd=document.getElementById("p").value; 
-    var xmlhttp;
-		if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
-		  xmlhttp=new XMLHttpRequest();
-		  }
-		else
-		  {// code for IE6, IE5
-		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-		  }
-		  
-		  xmlhttp.onreadystatechange=function()
-		  {
-		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-			{
-			  if(xmlhttp.responseText=="success")
-			  window.location.href="index.html?username="+user;
-			  else{
-				  var inner=document.getElementById("userCue");
-			      inner.innerHTML="<font color='red'>用户名密码不匹配</font>";
-			  }
-				  
-			}
-		  }	
-    
-    xmlhttp.open("Get","http://localhost:8080/wust3-travel/servlet/Logservlet?username="+user+"&password="+pwd,true);
-    
-    xmlhttp.send();
+			$.ajax({  
+	            type: "POST",  
+	            url: "http://localhost:8080/wust3-travel/servlet/Logservlet",  
+	            dataType:"json",
+	            data: $('#login_form').serialize(),  
+	              
+	           
+                success: function(data){    
+                	
+	            	//var obj = JSON.parse(data); //由JSON字符串转换为JSON对象
+	            	
+	                   if(data.status=="1")
+	                	   window.location.href="index.html";
+                 else
+                	 document.getElementById("userCue").innerHTML="<font color='red'>登录失败！</font>";
+	                	 
+	            }  
+	        })  ;    
     
     }
 		
