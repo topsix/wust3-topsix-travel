@@ -8,30 +8,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Jsonservlet;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 public class Logservlet extends HttpServlet {
 
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String username=request.getParameter("username");
-		String password=request.getParameter("password");
+//		String username=request.getParameter("username");
+//		String password=request.getParameter("password");
+//		
+//        StringBuilder sb = new StringBuilder();
+//    	response.setContentType("text/json");
+//    	if(username.equals("Bill")&&password.equals("Gates"))
+//    	{
+//    		sb.append("success");    	
+//        	
+//    		response.getWriter().append(sb.toString()); 
+//    	}
+//    	
+//    	else
+//    	{
+//           sb.append("error");    	
+//        	
+//    		response.getWriter().append(sb.toString()); 
+//    	}
 		
-        StringBuilder sb = new StringBuilder();
-    	response.setContentType("text/json");
-    	if(username.equals("Bill")&&password.equals("Gates"))
-    	{
-    		sb.append("success");    	
-        	
-    		response.getWriter().append(sb.toString()); 
-    	}
-    	
-    	else
-    	{
-           sb.append("error");    	
-        	
-    		response.getWriter().append(sb.toString()); 
-    	}
+
+		
 
 	}
 
@@ -39,7 +47,33 @@ public class Logservlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		String username=request.getParameter("username");
+		String password=request.getParameter("password");
+		Jsonservlet<String> json=new Jsonservlet<String>();
 		
+	
+    	response.setContentType("text/json");
+    	Gson gson=new GsonBuilder().create();
+    	if(username.equals("Bill")&&password.equals("Gates"))
+    	{
+    		json.setStatus("1");
+    		json.setMessage("username password right");
+    		json.setData("success");
+    		String result=gson.toJson(json);
+        	
+    		response.getWriter().append(result); 
+    	}
+    	
+    	else
+    	{
+    		json.setStatus("-1");
+    		json.setMessage("username or password error");
+    		json.setData("error");
+            String result=gson.toJson(json);
+        	
+    		response.getWriter().append(result); 
+    	}
+    	
 	}
 
 }
