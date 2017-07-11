@@ -8,9 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.User;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import dao.UserDAO;
 import model.Jsonservlet;
 
 public class Regservlet extends HttpServlet {
@@ -19,12 +22,22 @@ public class Regservlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String username=request.getParameter("username");
+		String password=request.getParameter("passwd");
+		String phone=request.getParameter("phone");
+		
+		User user=new User();
+		user.setUsername(username);
+		user.setPassword(password);
+		user.setPhone(phone);
+		UserDAO userdao=new UserDAO();
+		 
+		
 		Jsonservlet<String> json=new Jsonservlet<String>();
 		
 	
     	response.setContentType("text/json");
     	Gson gson=new GsonBuilder().create();
-    	if(username.equals("Bill"))
+    	if(userdao.isUsernameExists(username))
     	{
     		json.setStatus("-1");
     		json.setMessage("username exits");
@@ -36,13 +49,21 @@ public class Regservlet extends HttpServlet {
     	
     	else
     	{
-    		json.setStatus("0");
-    		json.setMessage("username success");
-    		json.setData("ok");
-            String result=gson.toJson(json);
-        	
-    		response.getWriter().append(result); 
+    		boolean flag=userdao.addUser(user);
+    		System.out.print(flag+username+ password);
+			if(flag){
+				json.setStatus("0");
+	    		json.setMessage("username success");
+	    		json.setData("ok");
+	            String result=gson.toJson(json);
+	        	
+	    		response.getWriter().append(result);
+			
+			}
+    		
+    		 
     	}
+    	
     	
 
 		
