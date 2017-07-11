@@ -13,6 +13,8 @@ import model.Jsonservlet;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import dao.UserDAO;
+
 public class Logservlet extends HttpServlet {
 
 
@@ -49,13 +51,18 @@ public class Logservlet extends HttpServlet {
 
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
+		UserDAO userdao=new UserDAO();
+		boolean flag=userdao.findUser(username, password);
+		
+		//System.out.print(flag+username+ password);
 		Jsonservlet<String> json=new Jsonservlet<String>();
 		
 	
     	response.setContentType("text/json");
     	Gson gson=new GsonBuilder().create();
-    	if(username.equals("Bill")&&password.equals("Gates"))
+    	if(flag)
     	{
+    		
     		json.setStatus("1");
     		json.setMessage("username password right");
     		json.setData("success");
