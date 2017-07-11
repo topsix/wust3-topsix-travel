@@ -1,5 +1,4 @@
-
-	package dao; import java.sql.*;
+package dao; import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,7 +6,7 @@ import java.util.Map;
 
 import beans.User;
 	public class UserDAO {
-	public static final String DRIVER="org.gjt.mm.mysql.Driver";
+	public static final String DRIVER="com.mysql.jdbc.Driver";
 	public static final String DBURL="jdbc:mysql://localhost:3306/travel";
 	public static final String DBUSER="root";
 	public static final String DBPASS="tmm";
@@ -114,6 +113,7 @@ import beans.User;
 			pStat.setString(3, user.getPhone());
 			int cnt=pStat.executeUpdate();
 			if(cnt>0) return true;
+			
 			else return false;
 			}
 			catch (Exception e) { return false; }
@@ -157,5 +157,3 @@ import beans.User;
 			}
 		}
 			} //end class
-
-
