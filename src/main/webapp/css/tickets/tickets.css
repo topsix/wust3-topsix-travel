@@ -1,0 +1,23 @@
+body{
+	font-family:"Microsoft Yahei";
+	font-size:12px;
+	margin:0;
+}
+
+.kuangjia{
+	width:1800px;
+	height:1200px;
+	background-color:blue;
+}
+.img{
+	padding:200px 300px;
+	width:400px;
+	height:200px;
+	float:left;
+}
+.tickets{
+	padding:50px 50px 350px 500px;
+	width:250px;
+	height:200px;
+	float:right;
+}
