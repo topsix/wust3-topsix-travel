@@ -54,7 +54,7 @@ public class Logservlet extends HttpServlet {
 		UserDAO userdao=new UserDAO();
 		boolean flag=userdao.findUser(username, password);
 		
-		System.out.print(flag+username+ password);
+		//System.out.print(flag+username+ password);
 		Jsonservlet<String> json=new Jsonservlet<String>();
 		
 	
