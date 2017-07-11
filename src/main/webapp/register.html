@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="textml; charset=utf-8">
 <script type="text/javascript" src="js/jquery/jquery-1.9.0.min.js"></script>
 
 <link href="css/login2.css" rel="stylesheet" type="text/css" />
@@ -15,10 +15,10 @@
 function register()
     {
     
-         //var user=document.getElementById("user").value;
+         /ar user=document.getElementById("user").value;
 		 // var pwd=document.getElementById("password").value;  
 		  var str=$('#regUser').serialize();
-		  //alert(str);   
+		  alert(str);   
 			$.ajax({  
 	            type: "POST",  
 	            url: "http://localhost:8080/wust3-travel/servlet/Regservlet",  
@@ -27,7 +27,7 @@ function register()
 	           
                 success: function(data){    
                 	
-	            	//var obj = JSON.parse(data); //由JSON字符串转换为JSON对象
+	            	/ar obj = JSON.parse(data); //由JSON字符串转换为JSON对象
 	            	
 	                   if(data.status=="0")
 	                	   window.location.href="login.html";
@@ -118,7 +118,8 @@ function checkpassword(password){  //失去焦点时执行的函数
 
 
 		<!--注册-->
-		<div class="qlogin" id="qlogin"
+
+		<<div class="qlogin" id="qlogin"
 			style="display:  block; height: 350px; ">
 
 			<div class="web_login">
@@ -131,33 +132,33 @@ function checkpassword(password){  //失去焦点时执行的函数
 							<div class="inputOuter2">
 								<input type="text" id="user" name="username" maxlength="16"
 									class="inputstyle2" onblur="checkname(this)" />
-							</div></li>
+							</div><>
 
 						<li><label for="passwd" class="input-tips2">密码：</label>
 							<div class="inputOuter2">
 								<input type="password" id="password" name="passwd"
 									maxlength="16" class="inputstyle2" onblur="checkpassword(this)" />
-							</div></li>
+							</div><>
 						<li><label for="passwd2" class="input-tips2">确认密码：</label>
 							<div class="inputOuter2">
-								<input type="password" id="password2" name="passwd"
+								<input type="password" id="password2" name="passwd1"
 									maxlength="16" class="inputstyle2"
 									onblur="checkpassword2(this)" />
-							</div></li>
+							</div><>
 
 						<li><label for="phone" class="input-tips2">手机：</label>
 							<div class="inputOuter2">
 
 								<input type="text" id="phone" name="phone" maxlength="11"
 									class="inputstyle2" onblur="checkphone(this)" />
-							</div></li>
+							</div><>
 
 						<li>
 							<div class="inputArea">
 								<input type="button" id="reg"
 									style="margin-top:10px;margin-left:100px;" class="button_blue"
 									value="确定并注册" onclick="register()" />
-							</div> <!--  </li><div class="cl"></div> -->
+							</div> <!--  <><div class="cl"></div> -->
 					</ul>
 				</form>
 
@@ -172,4 +173,5 @@ function checkpassword(password){  //失去焦点时执行的函数
 
 </body>
 </html>
+
 
