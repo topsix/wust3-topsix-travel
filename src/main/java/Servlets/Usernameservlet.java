@@ -45,7 +45,7 @@ public class Usernameservlet extends HttpServlet {
     		json.setStatus("1");
     		json.setMessage(" get username success");
     		json.setData(username);
-    		request.getSession().setAttribute("username", username);
+    		//request.getSession().setAttribute("username", username);
     		String result=gson.toJson(json);
         	
     		response.getWriter().append(result); 

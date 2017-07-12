@@ -56,26 +56,28 @@ import beans.User;
 			}
 			} //end findUser
 		@SuppressWarnings("finally")
-		public ArrayList<User> findallUser(){
+		public User find_User(String username){
 			
 			conn=getConnectionn();
-			ArrayList<User> list=new ArrayList<User>();
+			User user=new User();
+			//ArrayList<User> list=new ArrayList<User>();
 			try {
-			pStat =conn.prepareStatement("select * from users");
-			
+			pStat =conn.prepareStatement("select * from users where username=?");
+			pStat.setString(1, username);
 			rs=pStat.executeQuery();
 			
-			while(rs.next())
+			if(rs.next())
 			{
 				int id=rs.getInt("id");
+				String phone=rs.getString("phone");
 				
-				String username=rs.getString("username");
 				String password=rs.getString("password");
-				User user=new User();
+				
 				user.setId(id);
 				user.setPassword(password);
 				user.setUsername(username);
-				list.add(user);
+				user.setPhone(phone);
+				
 				
 				
 				
@@ -90,7 +92,8 @@ import beans.User;
 			}
 			finally{
 			close();
-			return list;
+			
+			return user;
 			}
 			
 			
