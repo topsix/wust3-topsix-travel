@@ -66,6 +66,7 @@ public class Logservlet extends HttpServlet {
     		json.setStatus("1");
     		json.setMessage("username password right");
     		json.setData("success");
+    		request.getSession().setAttribute("username", username);
     		String result=gson.toJson(json);
         	
     		response.getWriter().append(result); 
