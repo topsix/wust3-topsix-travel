@@ -143,7 +143,7 @@ import beans.User;
 		{
 			conn=getConnectionn();
 			try {
-				pStat =conn.prepareStatement("select * from users where username=?");
+			
 				
 			pStat=conn.prepareStatement("update users set password=?&phone=? where username=?");
 			pStat.setString(1, password);
