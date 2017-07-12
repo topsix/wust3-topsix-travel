@@ -7,17 +7,25 @@ body{
 .kuangjia{
 	width:1800px;
 	height:1200px;
-	background-color:blue;
+	
 }
 .img{
-	padding:200px 300px ;
-	width:400px;
-	height:200px;
+	padding:200px 200px ;
+	width:600px;
+	height:300px;
 	float:left;
 }
-.tickets{
-	padding:50px 50px 350px 500px;
-	width:250px;
-	height:200px;
-	float:right;
+.price{
+	padding:200px 1000px ;
+	width:600px;
+	height:300px;
 }
+.introduction{
+	padding:500px 200px ;
+	width:1400x;
+	height:300px;
+	margin-top:10px;
+	text-align:center;
+	font-size:16px;
+	
+}     
