@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>AdminLTE | tickets.js Charts</title>
+        <title>大好河山| ticket</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -10,12 +10,8 @@
         <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
         <link href="../../css/ionicons.min.css" rel="stylesheet" type="text/css" />
-        <!-- Morris charts -->
-        <link href="../../css/morris/morris.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
         <link href="../../css/AdminLTE.css" rel="stylesheet" type="text/css" />
-        <!-- Theme style -->
-        <link href="../../css/tickets/tickets.css" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,7 +25,7 @@
         <header class="header">
             <a href="../../index.html" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                AdminLTE
+               大好河山
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -43,27 +39,10 @@
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
-                        <li class="dropdown messages-menu">
-                         
-                            
-                        </li>
+                        
                         <!-- Notifications: style can be found in dropdown.less -->
-                        <li class="dropdown notifications-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-warning"></i>
-                                
-                            </a>
-                            
-                        </li>
-                        <!-- Tasks: style can be found in dropdown.less -->
-                        <li class="dropdown tasks-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-tasks"></i>
-                                
-                            </a>
-                            
-                        </li>
-                        <!-- User Account: style can be found in dropdown.less -->
+                        
+                       
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
@@ -82,7 +61,7 @@
                                 
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                   <div class="pull-left">
+                                    <div class="pull-left">
                                         <a href="../../login.html" class="btn btn-default btn-flat">登录</a>
                                     </div>
                                     <div class="pull-right">
@@ -103,7 +82,7 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="../../img/avatar3.png" class="img-circle" alt="User Image" />
+                            <img src="../../images/avatar3.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
                             <p>Hello, Jane</p>
@@ -128,40 +107,40 @@
                                 <i class="fa fa-dashboard"></i> <span>首页</span>
                             </a>
                         </li>
-                       
-                        <li class="treeview active">
+                        
+                        <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-bar-chart-o"></i>
-                                <span>个人信息</span>
+                                <span>个人中心</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li class="active"><a href="morris.html"><i class="fa fa-angle-double-right"></i> 我的信息</a></li>
-                                <li><a href="flot.html"><i class="fa fa-angle-double-right"></i> 我的密码</a></li>
-                               
+                                <li><a href="../my/information.html"><i class="fa fa-angle-double-right"></i>我的信息</a></li>
+                                <li><a href="../my/update_information.html"><i class="fa fa-angle-double-right"></i>修改密码</a></li>
+                             
                             </ul>
                         </li>
-                        <li class="treeview">
+                        <li class="treeview active">
                             <a href="#">
                                 <i class="fa fa-laptop"></i>
                                 <span>订单管理</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="../UI/general.html"><i class="fa fa-angle-double-right"></i> 未完成订单</a></li>
-                                <li><a href="../UI/icons.html"><i class="fa fa-angle-double-right"></i> 已完成订单</a></li>
-                              
+                                <li><a href="../order/unfinish.html"><i class="fa fa-angle-double-right"></i>未完成订单</a></li>
+                                <li class="active"><a href="../order/finish.html"><i class="fa fa-angle-double-right"></i>已完成订单</a></li>
+                                
                             </ul>
                         </li>
-                        <li class="treeview">
-                            <a href="#">
+                        <li >
+                            <a href="../about_us.html">
                                 <i class="fa fa-edit"></i> <span>关于我们</span>
-                                <i class="fa fa-angle-left pull-right"></i>
+                               
                             </a>
                            
                         </li>
                         <li class="treeview">
-                            <a href="../calendar.html">
+                            <a href="#">
                                 <i class="fa fa-table"></i> <span>Tables</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
@@ -173,16 +152,15 @@
                         <li>
                             <a href="../problems.html">
                                 <i class="fa fa-calendar"></i> <span>常见问题</span>
-                                
+                               
                             </a>
                         </li>
-                       
-                       
+                        
+                        
                     </ul>
                 </section>
                 <!-- /.sidebar -->
-            </aside>
-
+     
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
