@@ -152,14 +152,14 @@ public class UserDAO {
 		}
 	} // end add
 
-	public boolean updateUser(String username, String password, String phone) {
+	public boolean updateUser(String username, String password) {
 		conn = getConnectionn();
 		try {
 
-			pStat = conn.prepareStatement("update users set password=?&phone=? where username=?");
+			pStat = conn.prepareStatement("update users set password=? where username=?");
 			pStat.setString(1, password);
-			pStat.setString(2, phone);
-			pStat.setString(3, username);
+			
+			pStat.setString(2, username);
 			int cnt = pStat.executeUpdate();
 			if (cnt > 0)
 				return true;
