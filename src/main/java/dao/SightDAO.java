@@ -80,7 +80,7 @@ public class SightDAO {
 		Sight sight = new Sight();
 		// ArrayList<User> list=new ArrayList<User>();
 		try {
-			pStat = conn.prepareStatement("select * from users where sightname=?");
+			pStat = conn.prepareStatement("select * from sight where sightname=?");
 			pStat.setString(1, sightname);
 			rs = pStat.executeQuery();
 
