@@ -13,6 +13,20 @@
     <servlet-name>Logservlet</servlet-name>
     <servlet-class>Servlets.Logservlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UsernameServlet</servlet-name>
+    <servlet-class>Servlets.UsernameServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Usernameservlet</servlet-name>
+    <servlet-class>Servlets.Usernameservlet</servlet-class>
+  </servlet>
+
+
 
 
   <servlet-mapping>
@@ -22,6 +36,14 @@
   <servlet-mapping>
     <servlet-name>Logservlet</servlet-name>
     <url-pattern>/servlet/Logservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UsernameServlet</servlet-name>
+    <url-pattern>/servlet/UsernameServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Usernameservlet</servlet-name>
+    <url-pattern>/servlet/Usernameservlet</url-pattern>
   </servlet-mapping>
 
   <welcome-file-list>
