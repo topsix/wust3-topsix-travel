@@ -7,14 +7,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSessionContext;
+
+import model.Jsonservlet;
+import beans.Sight;
+import beans.User;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import model.Jsonservlet;
+import dao.SightDAO;
+import dao.UserDAO;
 
-public class Usernameservlet extends HttpServlet {
+public class Sightservlet extends HttpServlet {
 
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -26,23 +30,40 @@ public class Usernameservlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+      // String sightname=request.getParameter("sightname");
+      
+		String sightname=(String) request.getSession().getAttribute("sightname");
+		 System.out.print(sightname);
+		SightDAO sightdao=new SightDAO();
+		Sight sight=sightdao.find_Sight(sightname);
+	
+		System.out.print(sight.getPlace());
+		
 		Jsonservlet<String> json=new Jsonservlet<String>();
+		
+	
     	response.setContentType("text/json");
     	Gson gson=new GsonBuilder().create();
-    	String username=(String) request.getSession().getAttribute("username");
-    	if(username!=null)
+    	
+    	if(sight!=null)
     	{
     		json.setStatus("1");
-    		json.setMessage(" get username success");
-    		json.setData(username);
-    		//request.getSession().setAttribute("username", username);
-    		String result=gson.toJson(json);
-        	
-    		response.getWriter().append(result); 
+    		json.setMessage("success");
+    		json.setData("ok");
+    		json.setSight(sight);
+    		
+    		
+	}
+    	else
+    	{
+    		json.setStatus("-1");
     	}
-    	}
+
+		String result=gson.toJson(json);
+    	System.out.print(result);
+		response.getWriter().append(result); 
     	
 	}
+}
 
 

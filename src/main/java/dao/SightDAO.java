@@ -74,7 +74,7 @@ public class SightDAO {
 //	} // end findUser
 
 	@SuppressWarnings("finally")
-	public Sight find_User(String sightname) {
+	public Sight find_Sight(String sightname) {
 
 		conn = getConnectionn();
 		Sight sight = new Sight();
