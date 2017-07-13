@@ -1,0 +1,13 @@
+.out{border-width:1px;
+     border-style:solid;
+     border-color:#dddddd #777777 #777777 #dddddd} 
+.in{
+	width:50px;
+	border-width:1px;
+    border-style:solid;
+    border-color:#777777 #dddddd #dddddd #777777;
+    background:#b8dcfa} 
+.table{
+	width:500px;
+	margin:50px 80px;
+}
