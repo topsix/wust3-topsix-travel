@@ -25,11 +25,20 @@ public class Logfilter implements Filter {
 
 
 	public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2) throws IOException, ServletException {
+	
 		HttpServletRequest request = (HttpServletRequest) arg0;
 		HttpServletResponse response = (HttpServletResponse) arg1;
-		if (request.getSession().getAttribute("username") == null) {
-			response.sendRedirect(request.getContextPath() + "/login.htm");
-		} else {
+		
+		System.out.println(request.getRequestURI());
+		if(request.getRequestURI().equals("/wust3-travel/login.html"))
+		{
+			arg2.doFilter(arg0, arg1);
+		}
+
+		else if (request.getSession().getAttribute("username") == null) {
+			response.sendRedirect(request.getContextPath() + "/login.html");
+		} 
+		else {
 			arg2.doFilter(arg0, arg1);
 		}
 

@@ -47,16 +47,16 @@ function checkpassword(password){  //失去焦点时执行的函数
 	             
 	              
 	           
-                success: function(data){    
+                 success: function(data){    
                 	
-	            	//ar obj = JSON.parse(data); //由JSON字符串转换为JSON对象
+	            	//var obj = JSON.parse(data); //由JSON字符串转换为JSON对象
 	            	
-	                   if(data.status=="1")
-	                	   window.location.href="index.html";
-                 else
+                   if(data.status=="1")
+                	   window.location.href="index.html";
+                  else
                 	 document.getElementById("userCue").innerHTML="<font color='red'>登录失败！</font>";
 	                	 
-	            }  
+ 	            }  
 	        })  ;    
     
     }
@@ -112,3 +112,4 @@ function checkpassword(password){  //失去焦点时执行的函数
   </div>
 </body>
 </html>
+
