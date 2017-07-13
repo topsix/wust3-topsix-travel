@@ -1,5 +1,6 @@
 package model;
 
+import beans.Sight;
 import beans.User;
 
 public class Jsonservlet<T> {
@@ -7,6 +8,14 @@ public class Jsonservlet<T> {
    String message;
    String data;
    User user;
+   Sight sight;
+   public Sight getSight() {
+	return sight;
+}
+public void setSight(Sight sight) {
+	this.sight = sight;
+}
+
 public String getStatus() {
 	return status;
 }
