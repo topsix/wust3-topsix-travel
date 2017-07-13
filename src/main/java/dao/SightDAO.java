@@ -84,6 +84,7 @@ public class SightDAO {
 			pStat.setString(1, sightname);
 			rs = pStat.executeQuery();
 
+			
 			if (rs.next()) {
 				int price = rs.getInt("price");
 				String place = rs.getString("place");
