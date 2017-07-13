@@ -37,12 +37,14 @@
     <servlet-name>Updateservlet</servlet-name>
     <servlet-class>Servlets.Updateservlet</servlet-class>
   </servlet>
-
-
-
-
-
-
+  <filter>
+      <filter-name>Login</filter-name>
+      <filter-class>Filter.Logfilter</filter-class>
+  </filter>
+  <filter-mapping>
+      <filter-name>Login</filter-name>
+      <url-pattern>/index.html</url-pattern>
+  </filter-mapping>
   <servlet-mapping>
     <servlet-name>Regservlet</servlet-name>
     <url-pattern>/servlet/Regservlet</url-pattern>
@@ -67,7 +69,6 @@
     <servlet-name>Updateservlet</servlet-name>
     <url-pattern>/servlet/Updateservlet</url-pattern>
   </servlet-mapping>
-
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
