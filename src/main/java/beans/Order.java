@@ -1,10 +1,10 @@
 package beans;
 
-public class orders {
-      int orderid;
-      String username;
-      String sightname;
-      String status;
+public class Order {
+	int orderid;
+    String username;
+    String sightname;
+    String status;
 	public int getOrderid() {
 		return orderid;
 	}
@@ -29,5 +29,5 @@ public class orders {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-      
+
 }
