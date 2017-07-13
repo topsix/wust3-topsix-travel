@@ -89,7 +89,7 @@ public class SightDAO {
 				String place = rs.getString("place");
                 String detail=rs.getString("detail");
 				String picture = rs.getString("picture");
-
+				sight.setSightname(sightname);
 				sight.setDetail(detail);
 				sight.setPicture(picture);
 				sight.setPlace(place);
