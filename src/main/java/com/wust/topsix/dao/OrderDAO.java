@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import com.wust.topsix.beans.Order;
 import com.wust.topsix.beans.User;
@@ -176,8 +177,8 @@ public class OrderDAO {
 			close();
 		}
 	}
-public ResultSet allorder(String status,String username) {
-		
+public ArrayList<Order> allorder(String status,String username) {
+		ArrayList<Order>list=new ArrayList<Order>();
 		conn = getConnectionn();
 		try {
 		pStat = conn.prepareStatement("select * from orders where status=?&username=? ");
@@ -186,16 +187,29 @@ public ResultSet allorder(String status,String username) {
 		pStat.setString(2, username);
 		
 		ResultSet rs=pStat.executeQuery( );
-		if (rs!=null)
-			return rs;
-		else
-			return null;
+		while(rs.next())
+		{
+			Order order=new Order();
+			order.setOrderid(Integer.parseInt(rs.getString("orderid")));
+			order.setStatus(rs.getString("status"));
+			order.setUsername(rs.getString("username"));
+			order.setSightname(rs.getString("sightname"));
+			order.setPrice(Integer.parseInt(rs.getString("price")));
+		
+      		list.add(order);
+			
+			
+		}
+		
 		} catch (Exception e) {
 			System.out.println("查询订单错误！");
 			return null;
-		} finally {
-			
 		}
+		finally {
+			
+			close();
+		}
+		return list;
 	}  //end allfilm()
 
 }

@@ -12,8 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.wust.topsix.beans.Order;
 import com.wust.topsix.dao.OrderDAO;
+import com.wust.topsix.model.Json_order;
+import com.wust.topsix.model.Jsonservlet;
 
 public class Allorderservlet extends HttpServlet {
 
@@ -26,40 +29,53 @@ public class Allorderservlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String username=(String) request.getSession().getAttribute("username");
 		String status=request.getParameter("status"); 
-		OrderDAO orderdao=new OrderDAO();
-		ArrayList<Order> list=new ArrayList<Order>();
-		ResultSet rs=orderdao.allorder(status, username);
-		
-		if(rs!=null)
-		{
-			try {
-				while(rs.next())
-				{
-					Order order=new Order();
-					order.setOrderid(Integer.parseInt(rs.getString("orderid")));
-					order.setStatus(rs.getString("status"));
-					order.setUsername(rs.getString("username"));
-					order.setSightname(rs.getString("sightname"));
-					order.setPrice(Integer.parseInt(rs.getString("price")));
-					//System.out.println("moviename:"+rs.getString("moviename"));
-					list.add(order);
-					
-				}
-			} catch (NumberFormatException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		System.out.print(status);
+		int count=0;
+		OrderDAO orderdao=new OrderDAO();	
+		ArrayList<Order>list=orderdao.allorder(status, username);
+		Json_order<String> json=new Json_order<String>();
+    	response.setContentType("text/json");
+    	Gson gson=new GsonBuilder().create();
+         for(Order ll : list)
+
+          { 
+          	count++;
+
+          }
+
+          int draw;
+          if (request.getParameter("draw") == null)
+
+  			draw = 1;
+
+  		else{
+
+  			draw = Integer.parseInt(request.getParameter("draw"));
+
+  		}
+
+          json.setDraw(draw);
+
+          json.setRecordsTotal(count);
+
+          json.setRecordFiltered(2);
+
+          json.setData(list);
+
+  	    String info=gson.toJson(json);
+
+  	    response.getWriter().append(info);		
+
+  		System.out.print(info);
+
+          
 			
 		}
 		
-		Gson gb = new Gson();
-		String result=gb.toJson(list);
-		response.getWriter().append(result);
+	
 	}
 
-}
+
