@@ -20,7 +20,7 @@
 	type="text/css" media='print' />
 <!-- Theme style -->
 <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
-<link href="../css/ticket1.css" rel="stylesheet" type="text/css" />
+<link href="../css/tickets.ticket1.css" rel="stylesheet" type="text/css" />
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,6 +28,7 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+
 </head>
 <body class="skin-blue">
 	<!-- header logo: style can be found in header.less -->
@@ -181,16 +182,20 @@
 			</section>
 
 			<!-- Main content -->
-			<div id="box">
-<div id="content" >
-<!--  <img id="image" src="../images/suzhou.jpg" width="400" height="200"  "/ > -->
-<div id="image" align="left">
+			<div id="box" style="color:#800000;font-family:楷体">
+<div id="content" style="font-size:25px">
+ <img id="image" src="../images/suzhou.jpg" width="400" height="200"  "/ >
+<div id="image" align="left" width="400" height="200">
 </div>
 <dl>
 	<dt>景点：<span id="sightname">1</span></dt>
 	<dt>门票：<span id="price">2</span></dt>
-	<dd>详情<span class="red" id="detail">suzhou is</span></dd>
+	<dd>详情:<span class="red" id="detail">suzhou is</span></dd>
 </dl>
+</div>
+<div>
+						<input type="submit" id="sub"  style="background:#F5FFFA;border-bottom:solid 1px #333; height: 40px; width: 80px;margin-right:50px" value="确认购买">
+						<input type="submit" id="sub1" style="background:#F5FFFA;border-bottom:solid 1px #333;height: 40px; width: 80px" value="提交订单">
 </div>
 </div>
 			<!-- /.content -->
