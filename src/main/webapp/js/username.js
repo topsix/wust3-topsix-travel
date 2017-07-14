@@ -47,6 +47,7 @@ function update()
                	{
                	     
                	      document.getElementById("password").value=password1;
+               	       alert("修改成功");	
                	}
 	            
                 else if(data.status=="0")
