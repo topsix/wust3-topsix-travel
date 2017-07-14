@@ -17,7 +17,7 @@ public class Sightnameservlet extends HttpServlet {
          if(sightname!=null)
          {
         	 request.getSession().setAttribute("sightname", sightname);
-        	 response.sendRedirect(request.getContextPath() + "/pages/ticket1.html");
+        	 response.sendRedirect(request.getContextPath() + "/pages/ticket.html");
          }
 		
 	}

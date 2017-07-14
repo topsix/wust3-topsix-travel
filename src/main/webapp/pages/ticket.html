@@ -194,8 +194,9 @@
 						<div class="p1">
 							景点：<span id="sightname" class="cla1"></span>
 						</div>
-						<input type="submit" id="sub" value="确认购买"> <input
-							type="submit" id="sub1" value="提交订单">
+						<input type="button" id="sub" value="确认购买" onclick="buy()"> 
+						<input
+							type="button" id="sub1" value="提交订单" onclick="commit()">
 					</div>
 
 					<div class="introduction" id="detail"></div>
@@ -221,6 +222,7 @@
 
 	<!-- AdminLTE App -->
 	<script src="../js/AdminLTE/app.js" type="text/javascript"></script>
+	<script src="../js/order.js" type="text/javascript"></script>
 
 	<!-- page script -->
 	<script type="text/javascript">
