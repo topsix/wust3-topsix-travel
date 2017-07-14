@@ -75,7 +75,7 @@ public class OrderDAO {
 //	} // end findUser
 
 	@SuppressWarnings("finally")
-	public Order find_User(String username,String status) {
+	public Order find_Order(String username,String status) {
 
 		conn = getConnectionn();
 		Order order = new Order();
@@ -119,10 +119,10 @@ public class OrderDAO {
 		conn = getConnectionn();
 		try {
 			pStat = conn.prepareStatement("insert into orders values(null,?,?,?)");
-			pStat.setInt(1, order.getOrderid());
-			pStat.setString(2, order.getUsername());
-			pStat.setString(3, order.getSightname());
-			pStat.setString(4, order.getStatus());
+			
+			pStat.setString(1, order.getUsername());
+			pStat.setString(2, order.getSightname());
+			pStat.setString(3, order.getStatus());
 			int cnt = pStat.executeUpdate();
 			if (cnt > 0)
 				return true;
@@ -136,11 +136,12 @@ public class OrderDAO {
 		}
 	} // end add
 
-	public boolean deleteOrder(String status) {
+	public boolean deleteOrder(int orderid) {
 		conn = getConnectionn();
 		try {
-			pStat = conn.prepareStatement("delete from orders where status=?");
-			pStat.setString(1, status);;
+			pStat = conn.prepareStatement("delete from orders where orderid=?");
+			pStat.setInt(1, orderid);
+			
 			int cnt = pStat.executeUpdate();
 			if (cnt > 0)
 				return true;
