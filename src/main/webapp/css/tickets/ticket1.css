@@ -1,0 +1,35 @@
+dt {
+	float: left;
+	width: 60px;
+	margin: 0px;
+	padding: 0px;
+}
+dd {
+	float: left;
+	clear: none;
+	width: 290px;
+	margin: 0px;
+	padding: 0px;
+}
+dl {
+	width: 350px;
+	font-size: 9pt;
+	line-height: 1.5em;
+	position:relative;
+	margin: 0px;
+	padding: 0px;
+	left:15px;
+}
+.red {
+	color: #FF3300;
+}
+#box {
+	width: 500px;
+	background-color: #F1F1F7;
+}
+#box #content {
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+}
