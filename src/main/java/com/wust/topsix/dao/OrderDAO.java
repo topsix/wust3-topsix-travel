@@ -1,12 +1,12 @@
-package dao;
+package com.wust.topsix.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import beans.Order;
-import beans.User;
+import com.wust.topsix.beans.Order;
+import com.wust.topsix.beans.User;
 
 public class OrderDAO {
 	public static final String DRIVER = "com.mysql.jdbc.Driver";

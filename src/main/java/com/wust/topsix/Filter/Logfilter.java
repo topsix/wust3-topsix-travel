@@ -1,4 +1,4 @@
-package Filter;
+package com.wust.topsix.Filter;
 
 import java.io.IOException;
 

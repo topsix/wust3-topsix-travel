@@ -1,11 +1,11 @@
-package dao;
+package com.wust.topsix.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import beans.Sight;;
+import com.wust.topsix.beans.Sight;
 
 public class SightDAO {
 	public static final String DRIVER = "com.mysql.jdbc.Driver";

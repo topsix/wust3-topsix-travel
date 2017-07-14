@@ -12,7 +12,7 @@ function getusernamesession()
 	$
 	.ajax({
 		type : "POST",
-		url : "http://localhost:8080/wust3-travel/servlet/Usernameservlet",
+		url : "/wust3-travel/servlet/Usernameservlet",
 		dataType : "json",
 		success : function(data) {
 
@@ -35,7 +35,7 @@ function update()
       
 			$.ajax({  
 	            type: "POST",  
-	            url: "http://localhost:8080/wust3-travel/servlet/Updateservlet",  
+	            url: "/wust3-travel/servlet/Updateservlet",  
 	            dataType:"json",
 	            data: $('#update_information').serialize(), 
 	          
@@ -65,7 +65,7 @@ function getusername()
 {
 	  $.ajax({  
           type: "POST",  
-          url: "http://localhost:8080/wust3-travel/servlet/UserServlet",  
+          url: "/wust3-travel/servlet/UserServlet",  
           dataType:"json",
           
          
@@ -98,7 +98,7 @@ function getuser()
 {
 	  $.ajax({  
           type: "POST",  
-          url: "http://localhost:8080/wust3-travel/servlet/UserServlet",  
+          url: "/wust3-travel/servlet/UserServlet",  
           dataType:"json",
           //data: $('#regUser').serialize(),  
          

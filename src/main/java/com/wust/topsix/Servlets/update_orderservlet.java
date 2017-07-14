@@ -1,4 +1,4 @@
-package Servlets;
+package com.wust.topsix.Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,25 +8,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Sightnameservlet extends HttpServlet {
+import com.wust.topsix.dao.OrderDAO;
+
+public class update_orderservlet extends HttpServlet {
 
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-         String sightname=request.getParameter("sightname");
-         if(sightname!=null)
-         {
-        	 request.getSession().setAttribute("sightname", sightname);
-        	 response.sendRedirect(request.getContextPath() + "/pages/ticket.html");
-         }
-		
+
+		int orderid=Integer.parseInt(request.getParameter("orderid"));
+		String status="finish";
+		OrderDAO orderdao=new OrderDAO();
+		boolean flag=orderdao.updateOrder(orderid, status);
+		if(flag)
+		{  
+				response.sendRedirect(request.getContextPath() + "/order/unfinish.html");
+				
+		}
+		else
+		{
+			System.out.print("错误");
+		}
 	}
 
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-    this.doGet(request, response);
-		
+
 	}
 
 }

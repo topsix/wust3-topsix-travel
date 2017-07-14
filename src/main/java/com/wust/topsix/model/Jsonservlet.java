@@ -1,7 +1,7 @@
-package model;
+package com.wust.topsix.model;
 
-import beans.Sight;
-import beans.User;
+import com.wust.topsix.beans.Sight;
+import com.wust.topsix.beans.User;
 
 public class Jsonservlet<T> {
    String status;

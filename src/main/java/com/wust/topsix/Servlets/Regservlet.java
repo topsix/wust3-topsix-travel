@@ -1,4 +1,4 @@
-package Servlets;
+package com.wust.topsix.Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,13 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.User;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-import dao.UserDAO;
-import model.Jsonservlet;
+import com.wust.topsix.beans.User;
+import com.wust.topsix.dao.UserDAO;
+import com.wust.topsix.model.Jsonservlet;
 
 public class Regservlet extends HttpServlet {
 

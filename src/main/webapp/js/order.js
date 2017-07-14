@@ -5,7 +5,7 @@ function commit()
      var status="unfinish";
 	$.ajax({  
         type: "POST",  
-        url: "http://localhost:8080/wust3-travel/servlet/Addorderservlet?sightname="+sightname+"&price="+price+"&status="+status,  
+        url: "/wust3-travel/servlet/Addorderservlet?sightname="+sightname+"&price="+price+"&status="+status,  
         dataType:"json",
        // data: $('#login_form').serialize(), 
          
@@ -32,7 +32,7 @@ function buy()
      var status="finish";
 	$.ajax({  
         type: "POST",  
-        url: "../servlet/Addorderservlet?sightname="+sightname+"&price="+price+"&status="+status,  
+        url: "/wust3-travel/servlet/Addorderservlet?sightname="+sightname+"&price="+price+"&status="+status,  
         dataType:"json",
        // data: $('#login_form').serialize(), 
          
@@ -52,3 +52,6 @@ function buy()
     })  ;    
 
 }
+
+
+//function 

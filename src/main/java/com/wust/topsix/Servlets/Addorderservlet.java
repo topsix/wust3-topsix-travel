@@ -1,4 +1,4 @@
-package Servlets;
+package com.wust.topsix.Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,13 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-import model.Jsonservlet;
+
+
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-import beans.Order;
-import dao.OrderDAO;
+import com.wust.topsix.beans.Order;
+import com.wust.topsix.dao.OrderDAO;
+import com.wust.topsix.model.Jsonservlet;
 
 
 public class Addorderservlet extends HttpServlet {

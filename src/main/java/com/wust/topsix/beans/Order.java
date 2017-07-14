@@ -1,4 +1,4 @@
-package beans;
+package com.wust.topsix.beans;
 
 public class Order {
 	int orderid;

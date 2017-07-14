@@ -5,73 +5,73 @@
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>Regservlet</servlet-name>
-    <servlet-class>Servlets.Regservlet</servlet-class>
+    <servlet-class>com.wust.topsix.Servlets.Regservlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>Logservlet</servlet-name>
-    <servlet-class>Servlets.Logservlet</servlet-class>
+    <servlet-class>com.wust.topsix.Servlets.Logservlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>UsernameServlet</servlet-name>
-    <servlet-class>Servlets.UsernameServlet</servlet-class>
+    <servlet-class>com.wust.topsix.Servlets.UsernameServlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>Usernameservlet</servlet-name>
-    <servlet-class>Servlets.Usernameservlet</servlet-class>
+    <servlet-class>com.wust.topsix.Servlets.Usernameservlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>UserServlet</servlet-name>
-    <servlet-class>Servlets.UserServlet</servlet-class>
+    <servlet-class>com.wust.topsix.Servlets.UserServlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>Updateservlet</servlet-name>
-    <servlet-class>Servlets.Updateservlet</servlet-class>
+    <servlet-class>com.wust.topsix.Servlets.Updateservlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>Sightservlet</servlet-name>
-    <servlet-class>Servlets.Sightservlet</servlet-class>
+    <servlet-class>com.wust.topsix.Servlets.Sightservlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>Sightnameservlet</servlet-name>
-    <servlet-class>Servlets.Sightnameservlet</servlet-class>
+    <servlet-class>com.wust.topsix.Servlets.Sightnameservlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>Addorderservlet</servlet-name>
-    <servlet-class>Servlets.Addorderservlet</servlet-class>
+    <servlet-class>com.wust.topsix.Servlets.Addorderservlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>Allorderservlet</servlet-name>
-    <servlet-class>Servlets.Allorderservlet</servlet-class>
+    <servlet-class>com.wust.topsix.Servlets.Allorderservlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>deleteServlet</servlet-name>
-    <servlet-class>Servlets.deleteServlet</servlet-class>
+    <servlet-class>com.wust.topsix.Servlets.deleteServlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>update_orderservlet</servlet-name>
-    <servlet-class>Servlets.update_orderservlet</servlet-class>
+    <servlet-class>com.wust.topsix.Servlets.update_orderservlet</servlet-class>
   </servlet>
 
 
@@ -81,7 +81,7 @@
 
   <filter>
       <filter-name>Login</filter-name>
-      <filter-class>Filter.Logfilter</filter-class>
+      <filter-class>com.wust.topsix.Filter.Logfilter</filter-class>
   </filter>
   <filter-mapping>
       <filter-name>Login</filter-name>

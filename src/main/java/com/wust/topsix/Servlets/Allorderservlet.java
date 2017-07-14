@@ -1,4 +1,4 @@
-package Servlets;
+package com.wust.topsix.Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,9 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
-
-import beans.Order;
-import dao.OrderDAO;
+import com.wust.topsix.beans.Order;
+import com.wust.topsix.dao.OrderDAO;
 
 public class Allorderservlet extends HttpServlet {
 

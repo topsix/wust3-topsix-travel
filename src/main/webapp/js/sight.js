@@ -2,7 +2,7 @@ function getsight()
 {
 	 $.ajax({  
          type: "POST",  
-         url: "http://localhost:8080/wust3-travel/servlet/Sightservlet",  
+         url: "/wust3-travel/servlet/Sightservlet",  
          dataType:"json",
         
         
