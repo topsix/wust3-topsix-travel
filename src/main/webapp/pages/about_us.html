@@ -220,29 +220,11 @@
         <script src="../js/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
         <!-- Page specific script -->
         
-        <script  type="text/javascript">
-        $.ajax({  
-	            type: "POST",  
-	            url: "http://localhost:8080/wust3-travel/servlet/Usernameservlet",  
-	            dataType:"json",
-	            //data: $('#regUser').serialize(),  
-	           
-                success: function(data){    
-                	
-	            	//var obj = JSON.parse(data); //由JSON字符串转换为JSON对象
-	            	
-	                   if(data.status=="1")
-	                	  {
-	                	          var username=data.data;
-	                	          document.getElementById("tishi").innerHTML="<font size='3' color='black'>欢迎"+username+"</font>"; 
-                                  document.getElementById("greet").innerHTML="hello  "+username; 
-                                  document.getElementById("online").innerHTML="online"; 
-	                	  }
-	                	 
-	            }  
-	        })  ;    
+        <script src="../js/username.js" type="text/javascript"></script>
+       <script  type="text/javascript">
+
+        getusernamesession()
 	     </script>
-        
 
     </body>
 </html>
