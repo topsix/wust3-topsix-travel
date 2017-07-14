@@ -29,7 +29,7 @@ public class Logfilter implements Filter {
 		HttpServletRequest request = (HttpServletRequest) arg0;
 		HttpServletResponse response = (HttpServletResponse) arg1;
 		
-		System.out.println(request.getRequestURI());
+		//System.out.println(request.getRequestURI());
 		if(request.getRequestURI().equals("/wust3-travel/login.html"))
 		{
 			arg2.doFilter(arg0, arg1);
