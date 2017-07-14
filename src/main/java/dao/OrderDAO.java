@@ -89,11 +89,12 @@ public class OrderDAO {
 			if (rs.next()) {
 				int orderid=rs.getInt("orderid");
 				String sightname=rs.getString("sightname");
-				
+				int price=rs.getInt("price");
 				order.setOrderid(orderid);
 				order.setSightname(sightname);
 				order.setUsername(username);
 				order.setStatus(status);
+				order.setPrice(price);
 
 			}
 
@@ -118,11 +119,12 @@ public class OrderDAO {
 	public boolean addOrder(Order order) {
 		conn = getConnectionn();
 		try {
-			pStat = conn.prepareStatement("insert into orders values(null,?,?,?)");
+			pStat = conn.prepareStatement("insert into orders values(null,?,?,?,?)");
 			
 			pStat.setString(1, order.getUsername());
 			pStat.setString(2, order.getSightname());
 			pStat.setString(3, order.getStatus());
+			pStat.setInt(4, order.getPrice());
 			int cnt = pStat.executeUpdate();
 			if (cnt > 0)
 				return true;

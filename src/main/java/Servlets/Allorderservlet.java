@@ -43,8 +43,8 @@ public class Allorderservlet extends HttpServlet {
 					order.setStatus(rs.getString("status"));
 					order.setUsername(rs.getString("username"));
 					order.setSightname(rs.getString("sightname"));
-					
-					System.out.println("moviename:"+rs.getString("moviename"));
+					order.setPrice(Integer.parseInt(rs.getString("price")));
+					//System.out.println("moviename:"+rs.getString("moviename"));
 					list.add(order);
 					
 				}

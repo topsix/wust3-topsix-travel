@@ -35,12 +35,15 @@ public class Addorderservlet extends HttpServlet {
 			throws ServletException, IOException {
 		String username=(String) request.getSession().getAttribute("username");
 		String sightname=request.getParameter("sightname");
+		int price=Integer.parseInt(request.getParameter("price"));
+			
 		String status=request.getParameter("status");
 		OrderDAO orderdao=new OrderDAO();
 		Order order=new Order();
 		order.setSightname(sightname);
 		order.setStatus(status);
 		order.setUsername(username);
+		order.setPrice(price);
 		boolean flag=orderdao.addOrder(order);
 		Jsonservlet<String> json=new Jsonservlet<String>();
     	response.setContentType("text/json");

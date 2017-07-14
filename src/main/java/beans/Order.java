@@ -5,6 +5,13 @@ public class Order {
     String username;
     String sightname;
     String status;
+    int price;
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
 	public int getOrderid() {
 		return orderid;
 	}
