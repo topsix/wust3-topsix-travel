@@ -3,8 +3,7 @@ function register()
     
          //ar user=document.getElementById("user").value;
 		 // var pwd=document.getElementById("password").value;  
-		  var str=$('#regUser').serialize();
-		  alert(str);   
+		   
 			$.ajax({  
 	            type: "POST",  
 	            url: "http://localhost:8080/wust3-travel/servlet/Regservlet",  
