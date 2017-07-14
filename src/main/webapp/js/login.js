@@ -28,7 +28,7 @@ function checkpassword(password){  //失去焦点时执行的函数
     
 			$.ajax({  
 	            type: "POST",  
-	            url: "http://localhost:8080/wust3-travel/servlet/Logservlet",  
+	            url: "servlet/Logservlet",  
 	            dataType:"json",
 	            data: $('#login_form').serialize(), 
 	             

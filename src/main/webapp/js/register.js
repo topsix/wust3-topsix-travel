@@ -6,7 +6,7 @@ function register()
 		   
 			$.ajax({  
 	            type: "POST",  
-	            url: "http://localhost:8080/wust3-travel/servlet/Regservlet",  
+	            url: "servlet/Regservlet",  
 	            dataType:"json",
 	            data: $('#regUser').serialize(),  
 	           

@@ -23,8 +23,7 @@ function getusernamesession()
 				document.getElementById("greet").innerHTML = "hello  "
 						+ username;
 				document.getElementById("online").innerHTML = "online";
-			} else
-				document.getElementById("userCue").innerHTML = "<font color='red'>注册失败！</font>";
+			} 
 
 		}
 	});
