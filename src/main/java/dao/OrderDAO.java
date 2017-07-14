@@ -154,7 +154,7 @@ public class OrderDAO {
 		}
 	} // end add
 
-	public boolean updateUser(int orderid, String status) {
+	public boolean updateOrder(int orderid, String status) {
 		conn = getConnectionn();
 		try {
 
@@ -174,5 +174,26 @@ public class OrderDAO {
 			close();
 		}
 	}
+public ResultSet allorder(String status,String username) {
+		
+		conn = getConnectionn();
+		try {
+		pStat = conn.prepareStatement("select * from orders where status=?&username=? ");
+		pStat.setString(1, status);
+		
+		pStat.setString(2, username);
+		
+		ResultSet rs=pStat.executeQuery( );
+		if (rs!=null)
+			return rs;
+		else
+			return null;
+		} catch (Exception e) {
+			System.out.println("查询订单错误！");
+			return null;
+		} finally {
+			
+		}
+	}  //end allfilm()
 
 }
