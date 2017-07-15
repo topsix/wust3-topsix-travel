@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import com.wust.topsix.beans.Order;
-import com.wust.topsix.beans.User;
 
 public class OrderDAO {
 	public static final String DRIVER = "com.mysql.jdbc.Driver";
@@ -83,8 +82,7 @@ public class OrderDAO {
 		Order order = new Order();
 		// ArrayList<User> list=new ArrayList<User>();
 		try {
-			pStat = conn
-					.prepareStatement("select * from orders where username=? and status=?");
+			pStat = conn.prepareStatement("select * from orders where username=? and status=?");
 			pStat.setString(1, username);
 			pStat.setString(1, status);
 			rs = pStat.executeQuery();
@@ -122,8 +120,7 @@ public class OrderDAO {
 	public boolean addOrder(Order order) {
 		conn = getConnectionn();
 		try {
-			pStat = conn
-					.prepareStatement("insert into orders values(null,?,?,?,?)");
+			pStat = conn.prepareStatement("insert into orders values(null,?,?,?,?)");
 
 			pStat.setString(1, order.getUsername());
 			pStat.setString(2, order.getSightname());
@@ -164,8 +161,7 @@ public class OrderDAO {
 		conn = getConnectionn();
 		try {
 
-			pStat = conn
-					.prepareStatement("update orders set status=? where orderid=?");
+			pStat = conn.prepareStatement("update orders set status=? where orderid=?");
 			pStat.setString(1, status);
 
 			pStat.setInt(2, orderid);
@@ -186,8 +182,7 @@ public class OrderDAO {
 		ArrayList<Order> list = new ArrayList<Order>();
 		conn = getConnectionn();
 		try {
-			pStat = conn
-					.prepareStatement("select * from orders where status=? and username=? ");
+			pStat = conn.prepareStatement("select * from orders where status=? and username=? ");
 			pStat.setString(1, status);
 
 			pStat.setString(2, username);

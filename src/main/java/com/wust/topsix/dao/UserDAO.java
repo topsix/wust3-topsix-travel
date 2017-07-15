@@ -41,8 +41,7 @@ public class UserDAO {
 	public boolean isUsernameExists(String username) {
 		conn = getConnectionn();
 		try {
-			pStat = conn
-					.prepareStatement("select * from users where username=?");
+			pStat = conn.prepareStatement("select * from users where username=?");
 			pStat.setString(1, username);
 			rs = pStat.executeQuery();
 			if (rs.next())
@@ -59,8 +58,7 @@ public class UserDAO {
 	public boolean findUser(String username, String password) {
 		conn = getConnectionn();
 		try {
-			pStat = conn
-					.prepareStatement("select * from users where username=? and password=?");
+			pStat = conn.prepareStatement("select * from users where username=? and password=?");
 			pStat.setString(1, username);
 			pStat.setString(2, password);
 			rs = pStat.executeQuery();
@@ -82,8 +80,7 @@ public class UserDAO {
 		User user = new User();
 		// ArrayList<User> list=new ArrayList<User>();
 		try {
-			pStat = conn
-					.prepareStatement("select * from users where username=?");
+			pStat = conn.prepareStatement("select * from users where username=?");
 			pStat.setString(1, username);
 			rs = pStat.executeQuery();
 
@@ -121,8 +118,7 @@ public class UserDAO {
 	public boolean addUser(User user) {
 		conn = getConnectionn();
 		try {
-			pStat = conn
-					.prepareStatement("insert into users values(null,?,?,?)");
+			pStat = conn.prepareStatement("insert into users values(null,?,?,?)");
 			pStat.setString(1, user.getUsername());
 			pStat.setString(2, user.getPassword());
 			pStat.setString(3, user.getPhone());
@@ -160,8 +156,7 @@ public class UserDAO {
 		conn = getConnectionn();
 		try {
 
-			pStat = conn
-					.prepareStatement("update users set password=? where username=?");
+			pStat = conn.prepareStatement("update users set password=? where username=?");
 			pStat.setString(1, password);
 
 			pStat.setString(2, username);
