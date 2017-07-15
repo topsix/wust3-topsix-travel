@@ -24,8 +24,7 @@ public class Addorderservlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String username = (String) request.getSession()
-				.getAttribute("username");
+		String username = (String) request.getSession().getAttribute("username");
 		String sightname = request.getParameter("sightname");
 		int price = Integer.parseInt(request.getParameter("price"));
 
