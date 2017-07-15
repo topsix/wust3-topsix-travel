@@ -186,40 +186,49 @@
 
 				<!-- Small boxes (Stat box) -->
 
-<!-- 				<div class="img"> -->
-<!-- 					<div class="img" id="image"></div> -->
+				<!-- 				<div class="img"> -->
+				<!-- 					<div class="img" id="image"></div> -->
 
-<!-- 					<div class="box1" style="width: 425px; "> -->
-<!-- 						<div class="p1"> -->
-<!-- 							票价：<span id="price" class="cla1"></span> -->
-<!-- 						</div> -->
-<!-- 						<div class="p1"> -->
-<!-- 							景点：<span id="sightname" class="cla1"></span> -->
-<!-- 						</div> -->
-<!-- 						<input type="button" id="sub" value="确认购买" onclick="buy()">  -->
-<!-- 						<input -->
-<!-- 							type="button" id="sub1" value="提交订单" onclick="commit()"> -->
-<!-- 					</div> -->
+				<!-- 					<div class="box1" style="width: 425px; "> -->
+				<!-- 						<div class="p1"> -->
+				<!-- 							票价：<span id="price" class="cla1"></span> -->
+				<!-- 						</div> -->
+				<!-- 						<div class="p1"> -->
+				<!-- 							景点：<span id="sightname" class="cla1"></span> -->
+				<!-- 						</div> -->
+				<!-- 						<input type="button" id="sub" value="确认购买" onclick="buy()">  -->
+				<!-- 						<input -->
+				<!-- 							type="button" id="sub1" value="提交订单" onclick="commit()"> -->
+				<!-- 					</div> -->
 
-<!-- 					<div class="introduction" id="detail"></div> -->
-<!-- 				</div> -->
+				<!-- 					<div class="introduction" id="detail"></div> -->
+				<!-- 				</div> -->
 
-<div id="box" style="color:#800000;font-family:楷体">
-<div id="content" style="font-size:25px">
-<!--  <img id="image" src="../images/suzhou.jpg" width="600" height="300"  "/ > -->
-<div id="image" align="left" width="600" height="300">
-</div>
-<dl>
-	<dt>景点：<span id="sightname"></span></dt>
-	<dt>门票：<span id="price"></span></dt>
-	<dd>详情:<span class="red" id="detail"></span></dd>
-</dl>
-</div>
-<div>
-						<input type="button" id="sub"   onclick="buy()"  style="background:#F5FFFA;border-bottom:solid 1px #333; height: 40px; width: 80px;margin-right:50px" value="确认购买">
-						<input type="button" id="sub1"  onclick="commit()" style="background:#F5FFFA;border-bottom:solid 1px #333;height: 40px; width: 80px" value="提交订单">
-</div>
-</div>
+				<div id="box" style="color:#800000;font-family:楷体">
+					<div id="content" style="font-size:25px">
+						<!--  <img id="image" src="../images/suzhou.jpg" width="600" height="300"  "/ > -->
+						<div id="image" align="left" width="600" height="300"></div>
+						<dl>
+							<dt>
+								景点：<span id="sightname"></span>
+							</dt>
+							<dt>
+								门票：<span id="price"></span>
+							</dt>
+							<dd>
+								详情:<span class="red" id="detail"></span>
+							</dd>
+						</dl>
+					</div>
+					<div>
+						<input type="button" id="sub" onclick="buy()"
+							style="background:#F5FFFA;border-bottom:solid 1px #333; height: 40px; width: 80px;margin-right:50px"
+							value="确认购买"> <input type="button" id="sub1"
+							onclick="commit()"
+							style="background:#F5FFFA;border-bottom:solid 1px #333;height: 40px; width: 80px"
+							value="提交订单">
+					</div>
+				</div>
 			</section>
 			<!-- /.content -->
 		</aside>
@@ -242,9 +251,9 @@
 	<script src="../js/order.js" type="text/javascript"></script>
 
 	<!-- page script -->
-	   <script src="../js/username.js" type="text/javascript"></script>
-	   <script src="../js/sight.js" type="text/javascript"></script>
-       <script  type="text/javascript">
+	<script src="../js/username.js" type="text/javascript"></script>
+	<script src="../js/sight.js" type="text/javascript"></script>
+	<script type="text/javascript">
 
         getusernamesession();
 	     </script>
