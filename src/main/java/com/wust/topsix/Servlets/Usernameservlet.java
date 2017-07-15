@@ -15,33 +15,28 @@ import com.wust.topsix.model.Jsonservlet;
 
 public class Usernameservlet extends HttpServlet {
 
-	
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
 	}
 
-	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		Jsonservlet<String> json=new Jsonservlet<String>();
-    	response.setContentType("text/json");
-    	Gson gson=new GsonBuilder().create();
-    	String username=(String) request.getSession().getAttribute("username");
-    	if(username!=null)
-    	{
-    		json.setStatus("1");
-    		json.setMessage(" get username success");
-    		json.setData(username);
-    		//request.getSession().setAttribute("username", username);
-    		String result=gson.toJson(json);
-        	
-    		response.getWriter().append(result); 
-    	}
-    	}
-    	
+		Jsonservlet<String> json = new Jsonservlet<String>();
+		response.setContentType("text/json");
+		Gson gson = new GsonBuilder().create();
+		String username = (String) request.getSession()
+				.getAttribute("username");
+		if (username != null) {
+			json.setStatus("1");
+			json.setMessage(" get username success");
+			json.setData(username);
+			// request.getSession().setAttribute("username", username);
+			String result = gson.toJson(json);
+
+			response.getWriter().append(result);
+		}
 	}
 
-
+}

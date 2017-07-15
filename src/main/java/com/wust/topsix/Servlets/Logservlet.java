@@ -15,71 +15,63 @@ import com.wust.topsix.model.Jsonservlet;
 
 public class Logservlet extends HttpServlet {
 
-
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-//		String username=request.getParameter("username");
-//		String password=request.getParameter("password");
-//		
-//        StringBuilder sb = new StringBuilder();
-//    	response.setContentType("text/json");
-//    	if(username.equals("Bill")&&password.equals("Gates"))
-//    	{
-//    		sb.append("success");    	
-//        	
-//    		response.getWriter().append(sb.toString()); 
-//    	}
-//    	
-//    	else
-//    	{
-//           sb.append("error");    	
-//        	
-//    		response.getWriter().append(sb.toString()); 
-//    	}
-		
-
-		
+		// String username=request.getParameter("username");
+		// String password=request.getParameter("password");
+		//
+		// StringBuilder sb = new StringBuilder();
+		// response.setContentType("text/json");
+		// if(username.equals("Bill")&&password.equals("Gates"))
+		// {
+		// sb.append("success");
+		//
+		// response.getWriter().append(sb.toString());
+		// }
+		//
+		// else
+		// {
+		// sb.append("error");
+		//
+		// response.getWriter().append(sb.toString());
+		// }
 
 	}
-
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String username=request.getParameter("username");
-		String password=request.getParameter("password");
-		UserDAO userdao=new UserDAO();
-		boolean flag=userdao.findUser(username, password);
-		
-		//System.out.print(flag+username+ password);
-		Jsonservlet<String> json=new Jsonservlet<String>();
-		
-	
-    	response.setContentType("text/json");
-    	Gson gson=new GsonBuilder().create();
-    	if(flag)
-    	{
-    		
-    		json.setStatus("1");
-    		json.setMessage("username password right");
-    		json.setData("success");
-    		request.getSession().setAttribute("username", username);
-    		String result=gson.toJson(json);
-        	
-    		response.getWriter().append(result); 
-    	}
-    	
-    	else
-    	{
-    		json.setStatus("-1");
-    		json.setMessage("username or password error");
-    		json.setData("error");
-            String result=gson.toJson(json);
-        	
-    		response.getWriter().append(result); 
-    	}
-    	
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		UserDAO userdao = new UserDAO();
+		boolean flag = userdao.findUser(username, password);
+
+		// System.out.print(flag+username+ password);
+		Jsonservlet<String> json = new Jsonservlet<String>();
+
+		response.setContentType("text/json");
+		Gson gson = new GsonBuilder().create();
+		if (flag) {
+
+			json.setStatus("1");
+			json.setMessage("username password right");
+			json.setData("success");
+			request.getSession().setAttribute("username", username);
+			String result = gson.toJson(json);
+
+			response.getWriter().append(result);
+		}
+
+		else {
+			json.setStatus("-1");
+			json.setMessage("username or password error");
+			json.setData("error");
+			String result = gson.toJson(json);
+
+			response.getWriter().append(result);
+		}
+
 	}
 
 }

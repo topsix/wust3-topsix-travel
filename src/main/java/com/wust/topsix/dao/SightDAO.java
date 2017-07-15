@@ -41,7 +41,8 @@ public class SightDAO {
 	public boolean isSightnameExists(String sightname) {
 		conn = getConnectionn();
 		try {
-			pStat = conn.prepareStatement("select * from sight where sightname=?");
+			pStat = conn
+					.prepareStatement("select * from sight where sightname=?");
 			pStat.setString(1, sightname);
 			rs = pStat.executeQuery();
 			if (rs.next())
@@ -55,23 +56,24 @@ public class SightDAO {
 		}
 	} // end isUsernameExists
 
-//	public boolean findSight(String username, String password) {
-//		conn = getConnectionn();
-//		try {
-//			pStat = conn.prepareStatement("select * from users where username=? and password=?");
-//			pStat.setString(1, username);
-//			pStat.setString(2, password);
-//			rs = pStat.executeQuery();
-//			if (rs.next())
-//				return true;
-//			else
-//				return false;
-//		} catch (Exception e) {
-//			return false;
-//		} finally {
-//			close();
-//		}
-//	} // end findUser
+	// public boolean findSight(String username, String password) {
+	// conn = getConnectionn();
+	// try {
+	// pStat =
+	// conn.prepareStatement("select * from users where username=? and password=?");
+	// pStat.setString(1, username);
+	// pStat.setString(2, password);
+	// rs = pStat.executeQuery();
+	// if (rs.next())
+	// return true;
+	// else
+	// return false;
+	// } catch (Exception e) {
+	// return false;
+	// } finally {
+	// close();
+	// }
+	// } // end findUser
 
 	@SuppressWarnings("finally")
 	public Sight find_Sight(String sightname) {
@@ -80,15 +82,15 @@ public class SightDAO {
 		Sight sight = new Sight();
 		// ArrayList<User> list=new ArrayList<User>();
 		try {
-			pStat = conn.prepareStatement("select * from sight where sightname=?");
+			pStat = conn
+					.prepareStatement("select * from sight where sightname=?");
 			pStat.setString(1, sightname);
 			rs = pStat.executeQuery();
 
-			
 			if (rs.next()) {
 				int price = rs.getInt("price");
 				String place = rs.getString("place");
-                String detail=rs.getString("detail");
+				String detail = rs.getString("detail");
 				String picture = rs.getString("picture");
 				sight.setSightname(sightname);
 				sight.setDetail(detail);
@@ -108,71 +110,72 @@ public class SightDAO {
 
 	} // end findUser
 
+	// public boolean usernameisadminstrator(String username) {
+	// if (username.equals("tmm") || username.equals("lsy"))
+	// return true;
+	// else
+	// return false;
+	//
+	// } // end findUser
 
-//	public boolean usernameisadminstrator(String username) {
-//		if (username.equals("tmm") || username.equals("lsy"))
-//			return true;
-//		else
-//			return false;
-//
-//	} // end findUser
-
-//	public boolean addSight(Sight sight) {
-//		conn = getConnectionn();
-//		try {
-//			pStat = conn.prepareStatement("insert into users values(null,?,?,?)");
-//			pStat.setString(1, sight.getSightname());
-//			pStat.setString(2, sight.getPlace());
-//			pStat.setString(3, sight.getPicture());
-//			int cnt = pStat.executeUpdate();
-//			if (cnt > 0)
-//				return true;
-//
-//			else
-//				return false;
-//		} catch (Exception e) {
-//			return false;
-//		} finally {
-//			close();
-//		}
-//	} // end add
-//
-//	public boolean deleteUser(String username) {
-//		conn = getConnectionn();
-//		try {
-//			pStat = conn.prepareStatement("delete from users where username=?");
-//			pStat.setString(1, username);
-//			int cnt = pStat.executeUpdate();
-//			if (cnt > 0)
-//				return true;
-//			else
-//				return false;
-//		} catch (Exception e) {
-//			return false;
-//		} finally {
-//			close();
-//		}
-//	} // end add
-//
-//	public boolean updateUser(String username, String password, String phone) {
-//		conn = getConnectionn();
-//		try {
-//
-//			pStat = conn.prepareStatement("update users set password=?&phone=? where username=?");
-//			pStat.setString(1, password);
-//			pStat.setString(2, phone);
-//			pStat.setString(3, username);
-//			int cnt = pStat.executeUpdate();
-//			if (cnt > 0)
-//				return true;
-//			else
-//				return false;
-//
-//		} catch (Exception e) {
-//			return false;
-//		} finally {
-//			close();
-//		}
-//	}
-//
+	// public boolean addSight(Sight sight) {
+	// conn = getConnectionn();
+	// try {
+	// pStat = conn.prepareStatement("insert into users values(null,?,?,?)");
+	// pStat.setString(1, sight.getSightname());
+	// pStat.setString(2, sight.getPlace());
+	// pStat.setString(3, sight.getPicture());
+	// int cnt = pStat.executeUpdate();
+	// if (cnt > 0)
+	// return true;
+	//
+	// else
+	// return false;
+	// } catch (Exception e) {
+	// return false;
+	// } finally {
+	// close();
+	// }
+	// } // end add
+	//
+	// public boolean deleteUser(String username) {
+	// conn = getConnectionn();
+	// try {
+	// pStat = conn.prepareStatement("delete from users where username=?");
+	// pStat.setString(1, username);
+	// int cnt = pStat.executeUpdate();
+	// if (cnt > 0)
+	// return true;
+	// else
+	// return false;
+	// } catch (Exception e) {
+	// return false;
+	// } finally {
+	// close();
+	// }
+	// } // end add
+	//
+	// public boolean updateUser(String username, String password, String phone)
+	// {
+	// conn = getConnectionn();
+	// try {
+	//
+	// pStat =
+	// conn.prepareStatement("update users set password=?&phone=? where username=?");
+	// pStat.setString(1, password);
+	// pStat.setString(2, phone);
+	// pStat.setString(3, username);
+	// int cnt = pStat.executeUpdate();
+	// if (cnt > 0)
+	// return true;
+	// else
+	// return false;
+	//
+	// } catch (Exception e) {
+	// return false;
+	// } finally {
+	// close();
+	// }
+	// }
+	//
 }

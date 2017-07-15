@@ -40,57 +40,59 @@ public class OrderDAO {
 		}
 	} // end close
 
-//	public boolean isOrderidExists(int orderid) {
-//		conn = getConnectionn();
-//		try {
-//			pStat = conn.prepareStatement("select * from orders where orderid=?");
-//			pStat.setInt(1, orderid);
-//			rs = pStat.executeQuery();
-//			if (rs.next())
-//				return true;
-//			else
-//				return false;
-//		} catch (Exception e) {
-//			return false;
-//		} finally {
-//			close();
-//		}
-//	} // end isUsernameExists
+	// public boolean isOrderidExists(int orderid) {
+	// conn = getConnectionn();
+	// try {
+	// pStat = conn.prepareStatement("select * from orders where orderid=?");
+	// pStat.setInt(1, orderid);
+	// rs = pStat.executeQuery();
+	// if (rs.next())
+	// return true;
+	// else
+	// return false;
+	// } catch (Exception e) {
+	// return false;
+	// } finally {
+	// close();
+	// }
+	// } // end isUsernameExists
 
-//	public boolean findUser(String username, String password) {
-//		conn = getConnectionn();
-//		try {
-//			pStat = conn.prepareStatement("select * from users where username=? and password=?");
-//			pStat.setString(1, username);
-//			pStat.setString(2, password);
-//			rs = pStat.executeQuery();
-//			if (rs.next())
-//				return true;
-//			else
-//				return false;
-//		} catch (Exception e) {
-//			return false;
-//		} finally {
-//			close();
-//		}
-//	} // end findUser
+	// public boolean findUser(String username, String password) {
+	// conn = getConnectionn();
+	// try {
+	// pStat =
+	// conn.prepareStatement("select * from users where username=? and password=?");
+	// pStat.setString(1, username);
+	// pStat.setString(2, password);
+	// rs = pStat.executeQuery();
+	// if (rs.next())
+	// return true;
+	// else
+	// return false;
+	// } catch (Exception e) {
+	// return false;
+	// } finally {
+	// close();
+	// }
+	// } // end findUser
 
 	@SuppressWarnings("finally")
-	public Order find_Order(String username,String status) {
+	public Order find_Order(String username, String status) {
 
 		conn = getConnectionn();
 		Order order = new Order();
 		// ArrayList<User> list=new ArrayList<User>();
 		try {
-			pStat = conn.prepareStatement("select * from orders where username=? and status=?");
+			pStat = conn
+					.prepareStatement("select * from orders where username=? and status=?");
 			pStat.setString(1, username);
 			pStat.setString(1, status);
 			rs = pStat.executeQuery();
 
 			if (rs.next()) {
-				int orderid=rs.getInt("orderid");
-				String sightname=rs.getString("sightname");
-				int price=rs.getInt("price");
+				int orderid = rs.getInt("orderid");
+				String sightname = rs.getString("sightname");
+				int price = rs.getInt("price");
 				order.setOrderid(orderid);
 				order.setSightname(sightname);
 				order.setUsername(username);
@@ -109,19 +111,20 @@ public class OrderDAO {
 
 	} // end findUser
 
-//	public boolean usernameisadminstrator(String username) {
-//		if (username.equals("tmm") || username.equals("lsy"))
-//			return true;
-//		else
-//			return false;
-//
-//	} // end findUser
+	// public boolean usernameisadminstrator(String username) {
+	// if (username.equals("tmm") || username.equals("lsy"))
+	// return true;
+	// else
+	// return false;
+	//
+	// } // end findUser
 
 	public boolean addOrder(Order order) {
 		conn = getConnectionn();
 		try {
-			pStat = conn.prepareStatement("insert into orders values(null,?,?,?,?)");
-			
+			pStat = conn
+					.prepareStatement("insert into orders values(null,?,?,?,?)");
+
 			pStat.setString(1, order.getUsername());
 			pStat.setString(2, order.getSightname());
 			pStat.setString(3, order.getStatus());
@@ -144,7 +147,7 @@ public class OrderDAO {
 		try {
 			pStat = conn.prepareStatement("delete from orders where orderid=?");
 			pStat.setInt(1, orderid);
-			
+
 			int cnt = pStat.executeUpdate();
 			if (cnt > 0)
 				return true;
@@ -161,9 +164,10 @@ public class OrderDAO {
 		conn = getConnectionn();
 		try {
 
-			pStat = conn.prepareStatement("update orders set status=? where orderid=?");
+			pStat = conn
+					.prepareStatement("update orders set status=? where orderid=?");
 			pStat.setString(1, status);
-			
+
 			pStat.setInt(2, orderid);
 			int cnt = pStat.executeUpdate();
 			if (cnt > 0)
@@ -177,39 +181,38 @@ public class OrderDAO {
 			close();
 		}
 	}
-public ArrayList<Order> allorder(String status,String username) {
-		ArrayList<Order>list=new ArrayList<Order>();
+
+	public ArrayList<Order> allorder(String status, String username) {
+		ArrayList<Order> list = new ArrayList<Order>();
 		conn = getConnectionn();
 		try {
-		pStat = conn.prepareStatement("select * from orders where status=? and username=? ");
-		pStat.setString(1, status);
-		
-		pStat.setString(2, username);
-		
-		ResultSet rs=pStat.executeQuery( );
-		while(rs.next())
-		{
-			Order order=new Order();
-			order.setOrderid(Integer.parseInt(rs.getString("orderid")));
-			order.setStatus(rs.getString("status"));
-			order.setUsername(rs.getString("username"));
-			order.setSightname(rs.getString("sightname"));
-			order.setPrice(Integer.parseInt(rs.getString("price")));
-		
-      		list.add(order);
-			
-			
-		}
-		
+			pStat = conn
+					.prepareStatement("select * from orders where status=? and username=? ");
+			pStat.setString(1, status);
+
+			pStat.setString(2, username);
+
+			ResultSet rs = pStat.executeQuery();
+			while (rs.next()) {
+				Order order = new Order();
+				order.setOrderid(Integer.parseInt(rs.getString("orderid")));
+				order.setStatus(rs.getString("status"));
+				order.setUsername(rs.getString("username"));
+				order.setSightname(rs.getString("sightname"));
+				order.setPrice(Integer.parseInt(rs.getString("price")));
+
+				list.add(order);
+
+			}
+
 		} catch (Exception e) {
 			System.out.println("查询订单错误！");
 			return null;
-		}
-		finally {
-			
+		} finally {
+
 			close();
 		}
 		return list;
-	}  //end allfilm()
+	} // end allfilm()
 
 }

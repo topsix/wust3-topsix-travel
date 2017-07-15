@@ -26,56 +26,50 @@ public class Allorderservlet extends HttpServlet {
 		this.doPost(request, response);
 	}
 
-	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		String username=(String) request.getSession().getAttribute("username");
-		String status=request.getParameter("status"); 
+
+		String username = (String) request.getSession()
+				.getAttribute("username");
+		String status = request.getParameter("status");
 		System.out.print(status);
-		int count=0;
-		OrderDAO orderdao=new OrderDAO();	
-		ArrayList<Order>list=orderdao.allorder(status, username);
-		Json_order<String> json=new Json_order<String>();
-    	response.setContentType("text/json");
-    	Gson gson=new GsonBuilder().create();
-         for(Order ll : list)
+		int count = 0;
+		OrderDAO orderdao = new OrderDAO();
+		ArrayList<Order> list = orderdao.allorder(status, username);
+		Json_order<String> json = new Json_order<String>();
+		response.setContentType("text/json");
+		Gson gson = new GsonBuilder().create();
+		for (Order ll : list)
 
-          { 
-          	count++;
+		{
+			count++;
 
-          }
-
-          int draw;
-          if (request.getParameter("draw") == null)
-
-  			draw = 1;
-
-  		else{
-
-  			draw = Integer.parseInt(request.getParameter("draw"));
-
-  		}
-
-          json.setDraw(draw);
-
-          json.setRecordsTotal(count);
-
-          json.setRecordFiltered(2);
-            json.setData(list);
-         
-
-  	    String info=gson.toJson(json);
-
-  	    response.getWriter().append(info);		
-
-  		System.out.print(info);
-
-          
-			
 		}
-		
-	
+
+		int draw;
+		if (request.getParameter("draw") == null)
+
+			draw = 1;
+
+		else {
+
+			draw = Integer.parseInt(request.getParameter("draw"));
+
+		}
+
+		json.setDraw(draw);
+
+		json.setRecordsTotal(count);
+
+		json.setRecordFiltered(2);
+		json.setData(list);
+
+		String info = gson.toJson(json);
+
+		response.getWriter().append(info);
+
+		System.out.print(info);
+
 	}
 
-
+}

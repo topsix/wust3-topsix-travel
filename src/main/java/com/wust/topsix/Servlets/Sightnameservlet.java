@@ -10,23 +10,21 @@ import javax.servlet.http.HttpServletResponse;
 
 public class Sightnameservlet extends HttpServlet {
 
-	
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-         String sightname=request.getParameter("sightname");
-         if(sightname!=null)
-         {
-        	 request.getSession().setAttribute("sightname", sightname);
-        	 response.sendRedirect(request.getContextPath() + "/pages/ticket.html");
-         }
-		
+		String sightname = request.getParameter("sightname");
+		if (sightname != null) {
+			request.getSession().setAttribute("sightname", sightname);
+			response.sendRedirect(request.getContextPath()
+					+ "/pages/ticket.html");
+		}
+
 	}
 
-	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-    this.doGet(request, response);
-		
+		this.doGet(request, response);
+
 	}
 
 }
