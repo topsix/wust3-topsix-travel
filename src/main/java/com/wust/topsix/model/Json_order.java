@@ -8,7 +8,7 @@ public class Json_order<T> {
   int draw;
  int recordsTotal;
  int recordFiltered;
- ArrayList<Order> aData;
+ ArrayList<Order> data;
  public int getDraw() {
 	return draw;
 }
@@ -27,12 +27,13 @@ public int getRecordFiltered() {
 public void setRecordFiltered(int recordFiltered) {
 	this.recordFiltered = recordFiltered;
 }
-public ArrayList<Order> getaData() {
-	return aData;
+public ArrayList<Order> getData() {
+	return data;
 }
-public void setaData(ArrayList<Order> aData) {
-	this.aData = aData;
+public void setData(ArrayList<Order> data) {
+	this.data = data;
 }
+
 
 
 }
