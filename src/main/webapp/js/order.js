@@ -53,5 +53,69 @@ function buy()
 
 }
 
+function order(){
+	var i=0;
+	$.ajax({  
+		 type: "POST",  
+		 url: "/wust3-travel/servlet/Allorderservlet?status=unfinish", 
+		 dataType:"json",
+//		 data: $('#form').serialize(),  
+		 success: function(data){    	
+		 //var obj = JSON.parse(data); //由JSON字符串转换为JSON对象
+	     var list=data.data;
+	     var recordstotal=data.recordsTotal;
+		 length=list.length;
+		 var inn="";
+		 
+		 inn+="<table><tr><th style=\"width:200px\">orderid</th><th style=\"width:200px\">username</th><th style=\"width:200px\">sightname</th><th style=\"width:200px\">price</th><th style=\"width:200px\">status</th></tr>";
+		 for(i;i<recordstotal;i++)
+			 {
+			 inn+="<tr>";
+			 
+			 inn+="<td><font color='#9955FF' style=\"width:200px\">"+list[i].orderid+"</font></td>";
+			 inn+="<td style=\"width:200px\">"+list[i].username+"</td>";
+			 inn+="<td style=\"width:200px\">"+list[i].sightname+"</td>";
+			 inn+="<td style=\"width:200px\">"+list[i].price+"</td>";
+			 inn+="<td style=\"width:200px\">"+list[i].status+"</td>";
+			 inn+="</tr>"; 
+			 }
+		 inn+="</table>";
+		 document.getElementById("showunfinish").innerHTML=inn;
+	    }  
+	})  ;
+}
 
+function orders()
+{
+	
+	var i=0;
+	$.ajax({  
+		 type: "POST",  
+		 url: "/wust3-travel/servlet/Allorderservlet?status=finish", 
+		 dataType:"json",
+//		 data: $('#form').serialize(),  
+		 success: function(data){    	
+		 //var obj = JSON.parse(data); //由JSON字符串转换为JSON对象
+	     var list=data.data;
+	     var recordstotal=data.recordsTotal;
+		 length=list.length;
+		 var inn="";
+		 
+		 inn+="<table><tr><th style=\"width:200px\">orderid</th><th style=\"width:200px\">username</th><th style=\"width:200px\">sightname</th><th style=\"width:200px\">price</th><th style=\"width:200px\">status</th></tr>";
+		 for(i;i<recordstotal;i++)
+			 {
+			 inn+="<tr>";
+			 
+			 inn+="<td><font color='#9955FF' style=\"width:200px\">"+list[i].orderid+"</font></td>";
+			 inn+="<td style=\"width:200px\">"+list[i].username+"</td>";
+			 inn+="<td style=\"width:200px\">"+list[i].sightname+"</td>";
+			 inn+="<td style=\"width:200px\">"+list[i].price+"</td>";
+			 inn+="<td style=\"width:200px\">"+list[i].status+"</td>";
+			 inn+="</tr>"; 
+			 }
+		 inn+="</table>";
+		 document.getElementById("showunfinish").innerHTML=inn;
+	    }  
+	})  ;
+}
 //function 
