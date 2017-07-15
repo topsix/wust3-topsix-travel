@@ -19,7 +19,7 @@ function getsight()
              	          document.getElementById("price").innerHTML=price; 
                            document.getElementById("sightname").innerHTML=sightname; 
                            document.getElementById("detail").innerHTML=detail; 
-                            document.getElementById("image").innerHTML="<img src='"+picture+"' style=\"width: 500px; height: 300px\" />";
+                            document.getElementById("image").innerHTML="<img src='"+picture+"' style=\"width: 600px; height: 300px\" />";
                          // document.getElementById("image").innerHTML="<img src='../images/suzhou.jpg'/>";
              	  }
              	  else

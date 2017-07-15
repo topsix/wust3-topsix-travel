@@ -62,8 +62,8 @@ public class Allorderservlet extends HttpServlet {
           json.setRecordsTotal(count);
 
           json.setRecordFiltered(2);
-
-          json.setData(list);
+            json.setaData(list);
+         
 
   	    String info=gson.toJson(json);
 

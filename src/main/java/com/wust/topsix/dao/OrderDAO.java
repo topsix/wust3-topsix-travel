@@ -13,7 +13,7 @@ public class OrderDAO {
 	public static final String DRIVER = "com.mysql.jdbc.Driver";
 	public static final String DBURL = "jdbc:mysql://localhost:3306/travel";
 	public static final String DBUSER = "root";
-	public static final String DBPASS = "tmm";
+	public static final String DBPASS = "123456";
 	private Connection conn = null;
 	private PreparedStatement pStat = null;
 	private ResultSet rs = null;
@@ -181,7 +181,7 @@ public ArrayList<Order> allorder(String status,String username) {
 		ArrayList<Order>list=new ArrayList<Order>();
 		conn = getConnectionn();
 		try {
-		pStat = conn.prepareStatement("select * from orders where status=?&username=? ");
+		pStat = conn.prepareStatement("select * from orders where status=? and username=? ");
 		pStat.setString(1, status);
 		
 		pStat.setString(2, username);

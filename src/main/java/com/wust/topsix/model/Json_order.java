@@ -7,6 +7,8 @@ import com.wust.topsix.beans.Order;
 public class Json_order<T> {
   int draw;
  int recordsTotal;
+ int recordFiltered;
+ ArrayList<Order> aData;
  public int getDraw() {
 	return draw;
 }
@@ -25,12 +27,12 @@ public int getRecordFiltered() {
 public void setRecordFiltered(int recordFiltered) {
 	this.recordFiltered = recordFiltered;
 }
-public ArrayList<Order> getData() {
-	return data;
+public ArrayList<Order> getaData() {
+	return aData;
 }
-public void setData(ArrayList<Order> data) {
-	this.data = data;
+public void setaData(ArrayList<Order> aData) {
+	this.aData = aData;
 }
-int recordFiltered;
- ArrayList<Order> data;
+
+
 }

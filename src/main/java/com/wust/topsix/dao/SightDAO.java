@@ -11,7 +11,7 @@ public class SightDAO {
 	public static final String DRIVER = "com.mysql.jdbc.Driver";
 	public static final String DBURL = "jdbc:mysql://localhost:3306/travel";
 	public static final String DBUSER = "root";
-	public static final String DBPASS = "tmm";
+	public static final String DBPASS = "123456";
 	private Connection conn = null;
 	private PreparedStatement pStat = null;
 	private ResultSet rs = null;
